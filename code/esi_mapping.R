@@ -109,4 +109,4 @@ esi_map <- ggplot()+
           annotation_scale(location="br")+
           annotation_north_arrow(location="tl")
 
-ggsave("output/esi_map.png",esi_map,width=7,height=6,units="in",dpi=300)
+ggsave("output/esi_map.png",esi_map,width=7,height=5,units="in",dpi=300)
