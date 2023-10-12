@@ -1,26 +1,25 @@
-Station,Date,Time,Sounding,Target Depth,Replicate,CastID,SampleID,Lat,Long,Volume (l),Pres,Notes,
-ESI_08,2023-04-21,08:32:00,114,Bottom,1,757A001,141001,44 40.0813,-62 20.8761,3.5,Frozen,First station of the day. Trying 4 l per replicate,
-ESI_08,2023-04-21,08:32:00,114,Bottom,2,757A001,141002,44 40.0813,-62 20.8761,3.5,Frozen,Sat at bottom for 3 min,
-ESI_08,2023-04-21,08:32:00,114,Bottom,3,757A001,141003,44 40.0813,-62 20.8761,3.5,Frozen,,
-ESI_08,2023-04-21,08:32:00,114,Surface,1,757A001,141004,44 40.0813,-62 20.8761,1.5,Frozen,Filter clog after 1.5l,
-ESI_08,2023-04-21,08:32:00,114,Surface,2,757A001,141005,44 40.0813,-62 20.8761,0.12,Frozen,"Engine rattle, will only process eDNA samples for the remainder of the day then head back to Sheet Harbour to meet CAT mechanic. Search for recievers on Saturday.",
-ESI_08,2023-04-21,08:32:00,114,Surface,3,757A001,141006,44 40.0813,-62 20.8761,No sample,Frozen,"Seems to be air in the line, last two samples have struggled to get to 1 litre despite water seeming as clear as the bottom, which were sampled first",
-ESI_07,2023-04-21,09:58:00,77,Bottom,1,757A002,141007,44 43.0568,-62 23.5654,3,Frozen,,
-ESI_07,2023-04-21,09:58:00,77,Bottom,2,757A002,141008,44 43.0568,-62 23.5654,3,Frozen,,
-ESI_07,2023-04-21,09:58:00,77,Bottom,3,757A002,141009,44 43.0568,-62 23.5654,3,Frozen,,
-ESI_07,2023-04-21,09:58:00,77,Surface,1,757A002,141010,44 43.0568,-62 23.5654,1.5,Frozen,,
-ESI_07,2023-04-21,09:58:00,77,Surface,2,757A002,141011,44 43.0568,-62 23.5654,2,Frozen,,
-ESI_07,2023-04-21,09:58:00,77,Surface,3,757A002,141012,44 43.0568,-62 23.5654,2,Frozen,,
-ESI_06,2023-04-21,11:01:00,31.7,Bottom,1,757A003,141013,44 46.1446,-62 26.2013,1.75,Self-preserve,Clogged at 1.75 l,"Fishing buoys everywhere so we had to be slightly offset from the station, CTD was left on when moving to avoid the buoy"
-ESI_06,2023-04-21,11:01:00,31.7,Bottom,2,757A003,141014,44 46.1446,-62 26.2013,,Frozen,,
-ESI_06,2023-04-21,11:01:00,31.7,Bottom,3,757A003,141015,44 46.1446,-62 26.2013,1.1,Self-preserve,Clogged at 1.1 l,
-ESI_06,2023-04-21,11:01:00,31.7,Surface,1,757A003,141016,44 46.1446,-62 26.2013,3,Frozen,,
-ESI_06,2023-04-21,11:01:00,31.7,Surface,2,757A003,141017,44 46.1446,-62 26.2013,3.25,Self-preserve,Testing the limit to see if it would stop at the pre-set target volume ... it didn’t,
-ESI_06,2023-04-21,11:01:00,31.7,Surface,3,757A003,141018,44 46.1446,-62 26.2013,3.07,Frozen,,
-ESI_05,2023-04-21,12:36:00,11.9,Bottom,1,757A004,141019,44 49.3125,-62 28.7752,3,Self-preserve,"Last sample of the day, heading back to Sheet Harbour early to meet engine mechanic (CAT) to assess Perley issue",
-ESI_05,2023-04-21,12:36:00,11.9,Bottom,2,757A004,141020,44 49.3125,-62 28.7752,3.14,Frozen,,
-ESI_05,2023-04-21,12:36:00,11.9,Bottom,3,757A004,141021,44 49.3125,-62 28.7752,,Self-preserve,,
-ESI_05,2023-04-21,12:36:00,11.9,Surface,1,757A004,141022,44 49.3125,-62 28.7752,3.04,Frozen,,
-ESI_05,2023-04-21,12:36:00,11.9,Surface,2,757A004,141023,44 49.3125,-62 28.7752,3.02,Frozen,eDNAsampler battery ran out at 2.6 l – changed battery and sampled the remaining 400 ml,
-ESI_05,2023-04-21,12:36:00,11.9,Surface,3,757A004,141024,44 49.3125,-62 28.7752,3,Self-preserve,,
-,,,,,,,,,,,,,
+station,date,time,sounding,target_depth,replicate,CastID,SampleID,latitude,longitude,volume,perservation,SR_file,sr_match_notes,notes
+ESI_08,4/21/2023,8:32:00,114,Bottom,1,757A001,141001,44 40.0813,-62 20.8761,3.5,Frozen,data/eDNA/PER-2023-757/SmithRoot/00007.csv,First three suggested ~ 3 litres,First station of the day. Trying 4 l per replicate
+ESI_08,4/21/2023,8:32:00,114,Bottom,2,757A001,141002,44 40.0813,-62 20.8761,3.5,Frozen,data/eDNA/PER-2023-757/SmithRoot/00012.csv,file 00010.csv had a total volume of 0.16 litres but was between a 2.84 and 3.3 litres sample so I assume it was not a sample. Guessing that this volume should be added. ,Sat at bottom for 3 min
+ESI_08,4/21/2023,8:32:00,114,Bottom,3,757A001,141003,44 40.0813,-62 20.8761,3.5,Frozen,data/eDNA/PER-2023-757/SmithRoot/00014.csv,,
+ESI_08,4/21/2023,8:32:00,114,Surface,1,757A001,141004,44 40.0813,-62 20.8761,1.5,Frozen,data/eDNA/PER-2023-757/SmithRoot/00015.csv,00017 has a sample of 1.08 not sure what that is. ,Filter clog after 1.5l
+ESI_08,4/21/2023,8:32:00,114,Surface,2,757A001,141005,44 40.0813,-62 20.8761,0.12,Frozen,data/eDNA/PER-2023-757/SmithRoot/00018.csv,exact match with 0.12 in the total volume,"Engine rattle, will only process eDNA samples for the remainder of the day then head back to Sheet Harbour to meet CAT mechanic. Search for recievers on Saturday."
+ESI_08,4/21/2023,8:32:00,114,Surface,3,757A001,141006,44 40.0813,-62 20.8761,No sample,Frozen,data/eDNA/PER-2023-757/SmithRoot/00019.csv,0.17 was associated with the next and would seem to correspond with the notes,"Seems to be air in the line, last two samples have struggled to get to 1 litre despite water seeming as clear as the bottom, which were sampled first"
+ESI_07,4/21/2023,9:58:00,77,Bottom,1,757A002,141007,44 43.0568,-62 23.5654,3,Frozen,data/eDNA/PER-2023-757/SmithRoot/00021.csv ,,
+ESI_07,4/21/2023,9:58:00,77,Bottom,2,757A002,141008,44 43.0568,-62 23.5654,3,Frozen,data/eDNA/PER-2023-757/SmithRoot/00022.csv,,
+ESI_07,4/21/2023,9:58:00,77,Bottom,3,757A002,141009,44 43.0568,-62 23.5654,3,Frozen,data/eDNA/PER-2023-757/SmithRoot/00023.csv,,
+ESI_07,4/21/2023,9:58:00,77,Surface,1,757A002,141010,44 43.0568,-62 23.5654,1.5,Frozen,data/eDNA/PER-2023-757/SmithRoot/00024.csv,matches the 1.5 liter note,
+ESI_07,4/21/2023,9:58:00,77,Surface,2,757A002,141011,44 43.0568,-62 23.5654,2,Frozen,data/eDNA/PER-2023-757/SmithRoot/00026.csv,"00025 has 0.13 litres, but remaining two have close to 2",
+ESI_07,4/21/2023,9:58:00,77,Surface,3,757A002,141012,44 43.0568,-62 23.5654,2,Frozen,data/eDNA/PER-2023-757/SmithRoot/00027.csv,,
+ESI_06,4/21/2023,11:01:00,31.7,Bottom,1,757A003,141013,44 46.1446,-62 26.2013,1.75,Self-preserve,data/eDNA/PER-2023-757/SmithRoot/00028.csv,6 samples within the time bin for ESI_06 all matching the volumes reported. ,Clogged at 1.75 l
+ESI_06,4/21/2023,11:01:00,31.7,Bottom,2,757A003,141014,44 46.1446,-62 26.2013,,Frozen,data/eDNA/PER-2023-757/SmithRoot/00029.csv,,
+ESI_06,4/21/2023,11:01:00,31.7,Bottom,3,757A003,141015,44 46.1446,-62 26.2013,1.1,Self-preserve,data/eDNA/PER-2023-757/SmithRoot/00030.csv,,Clogged at 1.1 l
+ESI_06,4/21/2023,11:01:00,31.7,Surface,1,757A003,141016,44 46.1446,-62 26.2013,3,Frozen,data/eDNA/PER-2023-757/SmithRoot/00031.csv,,
+ESI_06,4/21/2023,11:01:00,31.7,Surface,2,757A003,141017,44 46.1446,-62 26.2013,3.25,Self-preserve,data/eDNA/PER-2023-757/SmithRoot/00032.csv,,Testing the limit to see if it would stop at the pre-set target volume ... it didn’t
+ESI_06,4/21/2023,11:01:00,31.7,Surface,3,757A003,141018,44 46.1446,-62 26.2013,3.07,Frozen,data/eDNA/PER-2023-757/SmithRoot/00033.csv,,
+ESI_05,4/21/2023,12:36:00,11.9,Bottom,1,757A004,141019,44 49.3125,-62 28.7752,3,Self-preserve,data/eDNA/PER-2023-757/SmithRoot/00034.csv,All match to 3,"Last sample of the day, heading back to Sheet Harbour early to meet engine mechanic (CAT) to assess Perley issue"
+ESI_05,4/21/2023,12:36:00,11.9,Bottom,2,757A004,141020,44 49.3125,-62 28.7752,3.14,Frozen,data/eDNA/PER-2023-757/SmithRoot/00035.csv,,
+ESI_05,4/21/2023,12:36:00,11.9,Bottom,3,757A004,141021,44 49.3125,-62 28.7752,,Self-preserve,data/eDNA/PER-2023-757/SmithRoot/00036.csv,,
+ESI_05,4/21/2023,12:36:00,11.9,Surface,1,757A004,141022,44 49.3125,-62 28.7752,3.04,Frozen,data/eDNA/PER-2023-757/SmithRoot/00037.csv,,
+ESI_05,4/21/2023,12:36:00,11.9,Surface,2,757A004,141023,44 49.3125,-62 28.7752,3.02,Frozen,data/eDNA/PER-2023-757/SmithRoot/00038.csv,00039 is 0.71l which added to 2.39 is 3.1 so am guessing this was the battery running out? ,eDNAsampler battery ran out at 2.6 l – changed battery and sampled the remaining 400 ml
+ESI_05,4/21/2023,12:36:00,11.9,Surface,3,757A004,141024,44 49.3125,-62 28.7752,3,Self-preserve,data/eDNA/PER-2023-757/SmithRoot/00040.csv,,
