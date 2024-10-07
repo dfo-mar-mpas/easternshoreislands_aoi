@@ -1,0 +1,16 @@
+name,lat,long,depth,year,equipment ,name,id,mission,notes
+liscomb deep,44.851225,62.07370167,55,2017,adcp,,M2044,,
+liscomb shallow,44.88671667,62.10085,22.6,2018,adcp,,M2066,,
+liscomb deep ,44.85148333,62.0838,54,2018,adcp,,M2065,,
+Ship Harbour deep,44.65783333,62.6935,55.3,2018,adcp,,M2067,,
+Ship Harbour shallow,NA,NA,NA,2018,adcp,,M2068,,
+liscomb deep,44.852255,-62.07092667,53,2019,adcp,,M2082,,
+liscomb shallow,44.88559833,-62.09752333,31.7,2019,adcp,,M2083,,
+ship harbour deep,44.65748333,-62.69331667,52,2019,adcp,,,,
+ship harbour shallow,44.70246667,-62.76508333,32.2,2019,adcp,,M2083,,
+ship harbour shallow,44.702475,62.76508,26.9,2019*,tchain,,M2085,PER2019001,
+ship harbour shallow,44.702475,62.76508,26.9,2019*,microcat,microcat_15539,M2085,PER2019001,
+ship harbour deep,44.65783333,62.69316667,55.6,2019,tchain,,,PER2019001,
+ship habour deep,44.65733333,62.6935,55.3,2018,adcp,,M2067,,
+Crooks Island Shallow,44.92793,62.10147167,10,2021,adcp,,M2104,,aanderra_data
+liscomb shallow,44.88671667,62.10085,2.6,2020,adcp,,M2139,,
