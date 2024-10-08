@@ -10,10 +10,10 @@ library(marmap)
 library(ggplot2)
 library(ggspatial)
 library(ggnewscale)
+library(ggrepel)
 library(viridis)
 library(raster)
 library(stars)
-
 
 s2_as_sf = FALSE
 
