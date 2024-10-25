@@ -1,6 +1,6 @@
 #Function for scraping data from minilog files
 
-minilog_proess<-function(x){
+minilog_process<-function(x){
   
   require(dplyr)
   require(lubridate)
