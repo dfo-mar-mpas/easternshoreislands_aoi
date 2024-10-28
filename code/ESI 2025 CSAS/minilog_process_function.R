@@ -1,5 +1,3 @@
-#Function for scraping data from minilog files
-
 minilog_process<-function(x){
   
   require(dplyr)
@@ -26,12 +24,12 @@ minilog_process<-function(x){
   df_data <- read.csv(x,skip=data_start,header=FALSE)%>%
     rename(date=1,time=2,temp=3)%>%
     mutate(device = minilog,
-           datetime = as.POSIXct(paste(date, time), format="%Y-%m-%d %H:%M:%S"),
-           date=as.POSIXct(date),
+           datetime_utc = as.POSIXct(paste(date, time), format = "%Y-%m-%d %H:%M:%S", tz = "UTC"),
+           datetime = with_tz(datetime_utc,"America/Halifax"), # convert to AST
            time=hms(time),
-           year=year(date),
-           month=month(date),
-           day=day(date),
+           year=year(datetime),
+           month=month(datetime),
+           day=day(datetime),
            start=start,
            stop=stop)%>%
     dplyr::select(device,datetime,date,time,year,month,day,temp,start,stop)
