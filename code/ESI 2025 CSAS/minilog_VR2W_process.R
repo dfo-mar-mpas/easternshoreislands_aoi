@@ -134,4 +134,4 @@ p1 <- ggplot(minilog_smoothed%>%filter(year>2018), aes(x = datetime, y = tempera
         legend.background = element_blank(),
         legend.title = element_blank())
 
-ggsave("output/ESI 2025 CSAS/VR2W_tlogger_2019_plot.png",p1,width=7,height=5,units="in",dpi=300)
+ggsave("output/ESI_2025_CSAS/VR2W_tlogger_2019_plot.png",p1,width=7,height=5,units="in",dpi=300)
