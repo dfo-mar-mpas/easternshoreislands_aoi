@@ -115,7 +115,12 @@ season_plot <- ggplot(data = hourly_data%>%filter(year==2019), aes(x = datetime,
                 #           aes(label = season),
                 #           vjust = 1.5, size = 5, fontface = "bold")
 
-ggsave("output/ESI 2025 CSAS/tchain-plot.png",season_plot,width=8,height=4,units="in",dpi=300)
+#save using the png() becuase ggsave saves a sort of washed out version
+png("output/ESI 2025 CSAS/tchain-plot.jpg",width=8,height=4,units="in",res=300,type="cairo")
+season_plot
+dev.off()
+
+#ggsave("output/ESI 2025 CSAS/tchain-plot.jpg",season_plot,width=8,height=4,units="in",dpi=300)
 
 
 ##Clark Richards -- OCE way of doing it. 
