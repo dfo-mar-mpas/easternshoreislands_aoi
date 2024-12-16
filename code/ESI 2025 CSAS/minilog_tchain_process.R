@@ -1,135 +1,147 @@
 ## analysis of t-chain data
 
-
 #load libaries
-library(tidyr)
 library(tidyverse)
-library(dplyr)
-library(ggplot2)
 library(purrr)
 library(lubridate)
 library(viridis)
+library(stringr)
+library(oce)
 
-#load processing function 
-load("code/ESI 2025 CSAS/minilog_process_function.R")
+#load process funciton
+source("code/ESI 2025 CSAS/minilog_process_function.R")
 
-#get the file paths for the minilog datasets
-minilog_files <- dir('data/Oceanography/2019 T-Chain/')%>%
-                .[grepl(".csv",.)]%>%
-                .[!grepl("lnk",.)]
+##functions for interpolating depth for the raster plot
 
-#extract and format the data
-minilog_df <- map(minilog_files, minilog_process)%>%
-  do.call("rbind",.)
+depth_approx=function(x,nout=30){ #using the approxfun 
+  data.frame(approx(x$depth,x$temp,xout = seq(min(x$depth),max(x$depth),length.out=nout)))%>%
+    rename(depth=x,temp=y)%>%return()
+}
 
-### Dynamic selection -----
-    # #get the hourly data (time-step is every 5 minutes which makes rendering the plots difficult)
-    # df_hourly <- minilog_df%>%rename(temperature = temp,device_id = device)%>%
-    #              mutate(datetime_hourly = floor_date(datetime, "hour")) %>%
-    #              group_by(device_id, datetime_hourly) %>%
-    #              summarize(temperature = first(temperature), .groups = 'drop')
-    # 
-    # #Extract the start and end for each time series using shiny and plotly. Here, you use the sliders to identify the
-    # #likely start and end in year, month, day, hour format and then record those so that you can trim the data. 
-    # #this is subjective and not totally repeatable, but I found it better than trying to automate a start/end selection. 
-    # 
-    # 
-    # ui <- fluidPage(
-    #   titlePanel("Temperature Time Series"),
-    #   sidebarLayout(
-    #     sidebarPanel(
-    #       selectInput("device", "Select Device:", choices = unique(df_hourly$device_id)),
-    #       verbatimTextOutput("selected_range")  # Output for displaying the selected range
-    #     ),
-    #     mainPanel(
-    #       plotlyOutput("timeSeriesPlot")
-    #     )
-    #   )
-    # )
-    # 
-    # # Server
-    # server <- function(input, output) {
-    #   filtered_data <- reactive({
-    #     df_hourly %>% filter(device_id == input$device)
-    #   })
-    #   
-    #   output$timeSeriesPlot <- renderPlotly({
-    #     req(filtered_data())
-    #     
-    #     p <- plot_ly(data = filtered_data(), x = ~datetime_hourly, y = ~temperature, type = 'scatter', mode = 'lines') %>%
-    #       layout(title = paste("Temperature Time Series for Device", input$device),
-    #              xaxis = list(title = "Datetime"),
-    #              yaxis = list(title = "Temperature (°C"),
-    #              dragmode = "zoom")
-    #     
-    #     p
-    #   })
-    #   
-    #   # Track the selected range
-    #   output$selected_range <- renderText({
-    #     range <- event_data("plotly_relayout")
-    #     print(range)  # For debugging - will show in R console
-    #     
-    #     if (!is.null(range) && !is.null(range[["xaxis.range[0]"]])) {
-    #       start_time <- as.POSIXct(range[["xaxis.range[0]"]])
-    #       end_time <- as.POSIXct(range[["xaxis.range[1]"]])
-    #       
-    #       paste("Selected Start Time:", start_time, "\n",
-    #             "Selected End Time:", end_time)
-    #     } else {
-    #       "No time range selected."
-    #     }
-    #   })
-    # }
-    # 
-    # # Run the app
-    # shinyApp(ui = ui, server = server)
+depth_linear=function(x,nout=30){ #using an explict linear modl
+  
+  mod <- lm(temp~depth,data=x)
+  data.frame(depth =seq(min(x$depth),max(x$depth),length.out=nout))%>%
+    mutate(temp=as.vector(predict(mod,newdata=.)))%>%return()
+}
+
+#matlibplot like colour scale
+jet.colors <- colorRampPalette(c("#00007F", "blue", "#007FFF", "cyan",
+                     "#7FFF7F", "yellow", "#FF7F00", "red", "#7F0000"))
+
+#identify the data and assign depths
+# tchain_files <- data.frame(file=dir("data/Oceanography/2019 Temperature chain/",full.names = TRUE))%>%
+#                 mutate(depth = gsub("_ship-harbour-shallow_M2085_dec18-nov19.csv","",file),
+#                        device = gsub("data/Oceanography/2019 Temperature chain/PER2019051_","",depth),
+#                        device = stringr::str_extract(device,"[^_]*_[^_]*"),
+#                        device = gsub("II-T_","II-T-",device), # to get it to match the processed extraction format
+#                        depth = gsub("data/Oceanography/2019 Temperature chain/PER2019051_Minilog-II-T_","",depth),
+#                        depth = sub(".*_", "", depth),
+#                        depth = as.numeric(sub("p",".",depth)))
+# 
+# #process the data 
+# tchain_df <- map(tchain_files%>%pull(file), minilog_process)%>%
+#               do.call("rbind",.)%>%
+#               left_join(tchain_files%>%dplyr::select(depth,device))
+# 
+# save("data/tchain.RData")
+
+  load("data/Oceanography/2019 Temperature chain/tchain.RData")
 
 
-##Outputs from this manual start/end selection is available 
-start_end_df <- read.csv("data/Oceanography/start_end_dates_TChain.csv")%>%
-                mutate(start=as.POSIXct(trimws(start), format="%Y-%m-%d %H:%M:%S"),
-                       stop=as.POSIXct(trimws(stop), format="%Y-%m-%d %H:%M:%S"))
+#set boundaries for the start and end point of the time-series
+#these were approximated using the start of the drop or increase in temperature along the full timeseries
+start_time <-  as.POSIXct("2018-12-08 07:05:00 AST", format="%Y-%m-%d %H:%M:%S")
+end_time <- as.POSIXct("2019-11-25 10:55:00 AST", format="%Y-%m-%d %H:%M:%S")
+
+#hourly tchain data
+hourly_data <- tchain_df %>%
+              filter(datetime > start_time,datetime<end_time)%>%
+              group_by(datetime = floor_date(datetime, "hour"), depth) %>%
+              summarise(temp = mean(temp, na.rm = TRUE)) %>%
+              ungroup()%>%
+              group_by(datetime)%>%
+              do(depth_approx(.,nout=100))%>%
+              ungroup()%>%
+              mutate(month=month(datetime),
+                     year=year(datetime),
+                     season=case_when(month %in% 1:3 ~"Winter",
+                                      month %in% 4:6 ~ "Spring",
+                                      month %in% 7:9 ~ "Summer",
+                                      month %in% 10:12 ~ "Fall"),
+                     season=factor(season,levels=c("Winter","Spring","Summer","Fall")))
+
+#tchain data
+depths_data <- data.frame(
+  datetime = as.POSIXct("2019-01-7"),  # Fixed date for vertical bar
+  depth = unique(tchain_df$depth),
+  season = rep(c("Winter","Spring","Summer","Fall"),each=length(unique(tchain_df$depth))))%>%
+  mutate(season = factor(season,levels=c("Winter","Spring","Summer","Fall")))
+
+season_breaks <- data.frame(datetime=c("2019-04-01","2019-07-01","2019-10-01"))%>%
+                 mutate(datetime = as.POSIXct(datetime))
+
+ 
+#set the plotting range    
+temp_range <- hourly_data%>%pull(temp)%>%range()
+temp_range[1] <- round(temp_range[1],1)
+temp_range[2] <- ceiling(temp_range[2])
+
+season_plot <- ggplot(data = hourly_data%>%filter(year==2019), aes(x = datetime, y = depth)) +
+                geom_tile(aes(fill=temp)) +  
+                scale_fill_gradientn(colors = jet.colors(100),  
+                                     name = expression("Temp (" * degree * "C)"),limits=temp_range)+
+                scale_y_reverse(expand=c(0,0)) +  # Reverse y-axis for depth
+                scale_x_datetime(expand=c(0,0))+
+                labs(x = "", y = "Depth (m)") +
+                theme_bw()+   
+                geom_vline(xintercept = unique(depths_data$datetime))+
+                geom_vline(xintercept = season_breaks$datetime,lty=2,col="black",lwd=0.75)+
+                geom_point(data = depths_data%>%filter(season=="Winter"), aes(x = datetime, y = depth),
+                fill="white",color = "black", size = 3,pch=21)+
+                #facet_wrap(~season, scales = "free_x", strip.position = "top",nrow=1) + ## creates some issues with the spacing (fall is shorter)
+                theme(
+                  panel.spacing = unit(0, "lines"),             # Removes space between panels
+                  strip.background = element_blank(),           # Removes strip background to look continuous
+                  strip.placement = "outside",                  # Places labels outside the panel grid
+                  strip.text = element_text(size = 10, face = "bold"),  # Adjusts strip text size and style
+                  panel.border = element_blank(),               # Removes panel border
+                  axis.ticks.x = element_blank()                # Removes axis ticks for seamless look
+                )
+                # geom_text(data = hourly_data %>% #doesn't look as good. 
+                #             filter(year==2019)%>%
+                #             group_by(season) %>%
+                #             summarise(datetime = mean(datetime), depth = min(depth) - 1),  # Position label slightly above tiles
+                #           aes(label = season),
+                #           vjust = 1.5, size = 5, fontface = "bold")
+
+#save using the png() becuase ggsave saves a sort of washed out version
+png("output/ESI_2025_CSAS/tchain-plot.jpg",width=8,height=4,units="in",res=300,type="cairo")
+season_plot
+dev.off()
+
+#ggsave("output/ESI_2025_CSAS/tchain-plot.jpg",season_plot,width=8,height=4,units="in",dpi=300)
 
 
-minilog_df_filtered <- minilog_df%>%
-  rename(rec_start=start,rec_stop=stop)%>%
-  left_join(.,start_end_df)%>%
-  group_by(device)%>%
-  filter(datetime >= unique(start) & datetime <= unique(stop))%>%
-  ungroup()
+##Clark Richards -- OCE way of doing it. 
 
-#3 hour smoother
-
-minilog_smoothed <- minilog_df_filtered %>%
-                  mutate(datetime = floor_date(datetime, "6 hours")) %>%
-                  group_by(device, datetime) %>%
-                  summarise(temperature = mean(temp, na.rm = TRUE),
-                            sd =sd(temp,na.rm=T)) %>%
-                  ungroup()%>%
-                  data.frame()%>%
-                  mutate(year=year(datetime))
-
-logger_order <- minilog_smoothed%>%
-                mutate(month=month(datetime),
-                       day=day(datetime))%>%
-                filter(month==6,day==15)%>%
-                arrange(-temperature)%>%
-                pull(device)
-
-
-p1 <- ggplot(minilog_smoothed%>%filter(year>2018), aes(x = datetime, y = temperature, group = device)) +
-  geom_line(aes(color = temperature), alpha = 0.8) +  # Color based on temperature
-  geom_smooth(aes(group = device), method = "loess", span = 0.2, se = FALSE, color = "black",lwd=0.75) +  # Smoothed line, grouped by device
-  scale_color_viridis(option = "C", direction = 1) +  # Viridis color scale for temperature
-  labs(title = "Ship Harbour Deep thermistor chain deployment - 2019",
-       x = "Time",
-       y = "Temperature (°C)",
-       color = "Temperature (°C)") +
-  theme_bw() +
-  theme(legend.position = "inside",
-        legend.position.inside = c(0.05,0.80),
-        legend.background = element_blank(),
-        legend.title = element_blank())
-
-ggsave("output/ESI 2025 CSAS/thermistor_chain_2019_plot.png",p1,width=7,height=5,units="in",dpi=300)
+# library(oce)
+# load("tchain.RData")
+# device <- unique(tchain_df$device)
+# temp <- split(tchain_df, tchain_df$device)
+# trange <- range(tchain_df$datetime)
+# ti <- seq(trange[1], trange[2], by = 600)
+# Ti <- Di <- array(NA, dim = c(length(ti), length(temp)))
+# for (i in seq_along(temp)) {
+#   Ti[, i] <- with(temp[[i]], approx(datetime, temp, ti)$y)
+#   Di[, i] <- with(temp[[i]], approx(datetime, depth, ti)$y)
+# }
+# o <- order(apply(Di, 2, mean, na.rm = TRUE))
+# Ti <- Ti[, o]
+# Di <- Di[, o]
+# meanD <- apply(Di, 2, mean, na.rm = TRUE)
+# imagep(ti, meanD, Ti, flipy = TRUE, zlim = c(-2, 20), decimate = FALSE, col = oceColorsJet)
+# imagep(ti, meanD, Ti,
+#        flipy = TRUE, zlim = c(-2, 20), decimate = FALSE, col = oceColorsJet,
+#        xlim = as.POSIXct(c("2019-07-01", "2019-07-31"))
+# )
