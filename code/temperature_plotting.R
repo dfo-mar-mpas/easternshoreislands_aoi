@@ -22,6 +22,6 @@ ggplot(data = esi_temp, aes(x=mdy_hm(Date), y=Temperature, group=1))+
   #geom_point()+
   xlab("Date")+
   ylab("Temperature (°C)")+
-  theme_bw(base_size = 16)
+  theme_bw(base_size = 20)
 
-ggsave("output/BirdIslands_2024_Tidbit_TemperaturePlot.png",plot = last_plot(), width = 12, height=10, dpi = 300,bg = "white")
+ggsave("output/BirdIslands_2024_Tidbit_TemperaturePlot.png",plot = last_plot(), width = 12, height=6, dpi = 300,bg = "white")
