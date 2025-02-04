@@ -2,5 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+*.zip
 
 *marmap_coord*
