@@ -5,3 +5,6 @@
 *.zip
 
 *marmap_coord*
+/data/Bathymetry/NONNA/*
+/data/Bathymetry/ESI_10m_bathy.tif
+data/Shapefiles/Nova Scotia Topographic DataBase - Water Features (Line Layer)/*
