@@ -144,6 +144,8 @@ west_river_polygon <- st_polygon(list(closed_line[,1:2])) %>%
                       st_make_valid()%>%
                       st_intersection(combo_lims%>%st_as_sfc())
 
+write_sf(west_river_polygon, dsn = "data/Shapefiles/west_river.shp")
+
 #now make the islands in the river -- TBH I am not sure how this works but it does
 island_combined <- river_trimmed%>%
                   filter(rivname_1 == "West River Sheet Harbour") %>%
@@ -152,6 +154,8 @@ island_combined <- river_trimmed%>%
 
 # Convert to sf object
 island_polygon_sf <- st_sf(geometry = island_combined)
+
+write_sf(st_collection_extract(island_polygon_sf, "POLYGON"),dsn="data/Shapefiles/west_river_islands.shp")
 
 release_locations_combined <- release_locations %>%
   group_by(RELEASE_LOCATION) %>%
@@ -239,5 +243,7 @@ combo_plot_dem <- p1_dem + inset_element(p2, left = 0.405, bottom = -0.015, righ
 ggsave("output/ESI_2025_CSAS/acoustic_combo_dem.png",combo_plot_dem,height=5,width=7,units="in",dpi=600)
 
 
+##### radial plot ------ 
 
+qdet_df <- read.csv("data/Acoustic/ESI_qdets_est_rellocs.csv")
 
