@@ -272,9 +272,6 @@ esi_lims <- reciever_locations%>%
             st_bbox()
 
 #zoomed in scale
-
- 
-  
 p3 <- ggplot()+ #ESI zoom out 
   geom_sf(data=coast_hr)+
   geom_sf(data= west_river_polygon,fill="white")+
@@ -285,9 +282,7 @@ p3 <- ggplot()+ #ESI zoom out
   theme_bw()+
   coord_sf(xlim=esi_lims[c(1,3)],ylim=esi_lims[c(2,4)],expand=0)
 
-
-
-
+#board scale
 p4 <- ggplot()+
       geom_sf(data=basemap_atlantic)+
       geom_sf(data=bathy_sf,linewidth=0.25,col="grey") +
