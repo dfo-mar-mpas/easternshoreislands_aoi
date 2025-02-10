@@ -13,11 +13,28 @@ library(patchwork)
 library(ggnewscale)
 library(knitr)
 library(stars)
+library(viridis)
 
 #Load projections
 latlong <- "+proj=longlat +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
 utmkm <- "+proj=utm +zone=20 +datum=NAD83 +units=km +no_defs +ellps=GRS80 +towgs84=0,0,0"
 CanProj <- "+proj=lcc +lat_1=49 +lat_2=77 +lat_0=63.390675 +lon_0=-91.86666666666666 +x_0=6200000 +y_0=3000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+
+#qualified detections
+qdet_df <- read.csv("data/Acoustic/ESI_qdets_est_rellocs.csv")%>%
+  st_as_sf(coords=c("Rel.longitude","Rel.latitude"),crs=latlong,remove=FALSE)%>%
+  st_transform(CanProj)
+
+large_lim <- qdet_df%>%
+  st_transform(latlong)%>%
+  st_buffer(3)%>%
+  st_bbox()
+
+large_lim[1] <- -81 #sets the extent of our region 
+large_lim[2] <- 23
+large_lim[3] <- -54
+large_lim[4] <- 50
+
 
 #grab the Canadian closures. 
 
@@ -29,11 +46,17 @@ Atlantic <- data_bioregion("Atlantic")%>%
             st_transform(4326)
 
 # closures <- data_CPCAD_areas(Atlantic)%>%
-#             st_transform(CanProj)
-
-# save(closures,file="data/Shapefiles/atlantic_closures.shp")
+#             st_transform(CanProj)%>%
+#             st_as_sf()
+# 
+# write_sf(closures,dsn="data/Shapefiles/atlantic_closures.shp")
 
 closures <- read_sf("data/Shapefiles/atlantic_closures.shp")
+west_river <- read_sf("data/Shapefiles/west_river.shp")
+west_river_islands <- read_sf("data/Shapefiles/west_river_islands.shp")
+noaa_closures <- read_sf("r:/Science/CESD/HES_MPAGroup/Data/Shapefiles/NOAA MPAs/NOAA_MPAs.shp")
+noaa_closures <- noaa_closures%>%
+                 st_intersection(large_lim%>%st_as_sfc()%>%st_transform(st_crs(noaa_closures)))
 
 #reciever locations
 reciever_locations <- read.csv("data/Acoustic/ESIAOI_NSSA_allstations.csv")%>%
@@ -61,16 +84,13 @@ otn_stations <- geoserver_receivers %>%
          year>2018)
 
 
-#qualified detections
-qdet_df <- read.csv("data/Acoustic/ESI_qdets_est_rellocs.csv")%>%
-           st_as_sf(coords=c("Rel.longitude","Rel.latitude"),crs=latlong,remove=FALSE)%>%
-           st_transform(CanProj)
-
 #load the ESI dem
 esi_dem <- rast("data/Bathymetry/esi_dem_with_sheetharbour.tiff")
 
 #load coastline and make basemap ------
 coast_hr <- read_sf("data/shapefiles/NS_coastline_project_Erase1.shp")%>%st_transform(CanProj)
+
+
 
 #Basemaps
 bioregion <- data_planning_areas()%>%
@@ -119,22 +139,9 @@ basemap_atlantic <- rbind(ne_states(country = "Canada",returnclass = "sf")%>%
                             mutate(country="USA"))%>%
   st_transform(CanProj)
 
-large_lim <- qdet_df%>%
-              st_transform(latlong)%>%
-              st_buffer(3)%>%#1.5 degree buffer
-              st_transform(CanProj)%>%
-              st_bbox()
+land <- ne_countries(scale = "medium", returnclass = "sf")
 
-large_lim <- qdet_df%>%
-              st_transform(latlong)%>%
-              st_buffer(3)%>%
-              st_bbox()
-
-large_lim[1] <- -81
-large_lim[2] <- 23
-large_lim[3] <- -54
-large_lim[4] <- 50
-
+#make rings
 esi_centre <- esi_poly%>%
             st_centroid()
 
@@ -163,8 +170,10 @@ for(i in c(100,500,1500,3000)){rings <- rbind(rings,esi_centre_terra%>%buffer(i*
 p1 <- ggplot()+
   geom_sf(data=bioregion%>%st_transform(latlong),fill=NA)+
   geom_sf(data=rings,fill=NA,lty=2)+
-  geom_sf(data=maritimes_network%>%filter(name != "Eastern Shore Islands")%>%st_transform(latlong),fill="grey",alpha=0.1)+
+  geom_sf(data=maritimes_network%>%filter(name != "Eastern Shore Islands")%>%st_transform(latlong),fill="cornflowerblue",alpha=0.2)+
   geom_sf(data=maritimes_network%>%filter(name == "Eastern Shore Islands")%>%st_transform(latlong),fill="coral2")+
+  geom_sf(data=closures%>%st_transform(latlong),fill=NA)+
+  geom_sf(data=noaa_closures%>%filter(AreaMar>100)%>%st_transform(latlong),fill=NA)+
   geom_sf(data=basemap_atlantic%>%st_transform(latlong))+
   geom_sf(data=land%>%st_transform(latlong))+
   geom_sf(data=qdet_df%>%st_transform(latlong),aes(fill=Species),pch=21,size=3.5)+
@@ -191,7 +200,7 @@ med_lim[2] <- 39.5
 
 p2 <- ggplot()+
       geom_sf(data=bioregion%>%st_transform(latlong),fill=NA)+
-      geom_sf(data=maritimes_network%>%filter(name != "Eastern Shore Islands")%>%st_transform(latlong),fill="grey",alpha=0.1)+
+      geom_sf(data=maritimes_network%>%filter(name != "Eastern Shore Islands")%>%st_transform(latlong),fill="cornflowerblue",,alpha=0.1)+
       geom_sf(data=maritimes_network%>%filter(name == "Eastern Shore Islands")%>%st_transform(latlong),fill="coral2")+
       geom_sf(data=basemap_atlantic%>%st_transform(latlong))+
       geom_sf(data=land%>%st_transform(latlong))+
@@ -221,36 +230,75 @@ salmon_qdet <- read.csv("data/Acoustic/esisalmon_match_sum_both_nozero.csv")%>%
                st_as_sf(coords=c("mean_lon","mean_lat"),crs=latlong,remove=FALSE)%>%
                st_transform(CanProj)
 
+salmon_lims <- salmon_qdet%>%
+  st_transform(utmkm)%>%
+  st_buffer(200)%>%
+  st_transform(CanProj)%>%
+  st_bbox()
+
+#download bathymetry for a contour line
+lims_bbox <- bioregion%>%
+             st_transform(utmkm)%>%
+             st_buffer(1000)%>%
+             st_transform(4326)%>%
+             st_bbox()
+          
+  
+#bathymetry
+ # bathy <- rast("R:/Science/CESD/HES_MPAGroup/Data/Bathymetry/GEBCO/gebco_2019_Canada.tif")
+ # 
+ # lims_bbox <- bioregion%>%
+ #   st_transform(utmkm)%>%
+ #   st_buffer(1000)%>%
+ #   st_transform(st_crs(bathy))%>%
+ #   st_bbox()
+ # 
+ # ext <- ext(lims_bbox[1], lims_bbox[3], lims_bbox[2], lims_bbox[4])
+ # 
+ # bathy_crop <- crop(bathy, ext)
+ # 
+ # bathy_contour <- as.contour(bathy_crop, levels = -250) %>%
+ #   st_as_sf()
+ # write_sf(bathy_contour,dsn = "data/Shapefiles/contour_250.shp")
+ # rm(bathy,bathy_crop)
+
+bathy_sf <- read_sf("data/Shapefiles/contour_250.shp")
+
+
+esi_lims <- reciever_locations%>%
+            st_transform(utmkm)%>%
+            st_buffer(5)%>%
+            st_transform(CanProj)%>%
+            st_bbox()
 
 #zoomed in scale
 
-p3 <- ggplot()+
-  geom_sf()
+ 
+  
+p3 <- ggplot()+ #ESI zoom out 
+  geom_sf(data=coast_hr)+
+  geom_sf(data= west_river_polygon,fill="white")+
+  geom_sf(data=esi_poly,fill=NA)+
+  geom_sf(data=reciever_locations%>%filter(!grepl("SR",station),!grepl("MR",station)),size=0.2)+
+  geom_sf(data=reciever_locations%>%filter(grepl("SR",station)|grepl("MR",station)),size=1)+
+  geom_sf(data=salmon_qdet,shape=21,size=2,fill="salmon")+ #note that the location's don't exactly match the recievers. 
+  theme_bw()+
+  coord_sf(xlim=esi_lims[c(1,3)],ylim=esi_lims[c(2,4)],expand=0)
 
-#set plotting limits for the large scale detections
-salmon_lims <- salmon_qdet%>%
-               st_transform(utmkm)%>%
-               st_buffer(200)%>%
-               st_transform(CanProj)%>%
-               st_bbox()
 
-#download bathymetry for a contour line
-lims_bbox <- salmon_lims%>%st_as_sfc()%>%st_transform(4326)%>%st_bbox()
 
-bathy <- read_stars("R:/Science/CESD/HES_MPAGroup/Data/Bathymetry/GEBCO/gebco_2019_Canada.tif")
-
-bathy_crop <- st_crop(bathy,lims_bbox)
-bathy_sf <- st_contour(bathy_crop, breaks = -250)%>%st_transform(CanProj)
 
 p4 <- ggplot()+
       geom_sf(data=basemap_atlantic)+
+      geom_sf(data=bathy_sf,linewidth=0.25,col="grey") +
       geom_sf(data=closures,fill="grey95",col="black",linewidth=0.1)+
-      geom_sf(data=otn_stations,size=0.25,pch=20,col="grey30")+
-      geom_stars(data=bathy_sf,color="steelblue", linewidth=0.5, linetype="dashed") +
+      geom_sf(data=otn_stations,size=0.05,pch=20,col="grey45")+
       geom_sf(data=salmon_qdet,pch=21,size=3,fill="salmon")+
       theme_bw()+
       coord_sf(expand=0,xlim=salmon_lims[c(1,3)],ylim=salmon_lims[c(2,4)])+
-      annotation_scale(location="bl")+
+      annotation_scale(location="br")
+
+ggsave("output/ESI_2025_CSAS/salmon_detections_outside_array.png",p4,height=6,width=6,units="in",dpi=600)
       
   
 
