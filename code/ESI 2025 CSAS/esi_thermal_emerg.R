@@ -23,9 +23,6 @@ CanProj <- "+proj=lcc +lat_1=49 +lat_2=77 +lat_0=63.390675 +lon_0=-91.8666666666
 #store root directory
 root_dir <- getwd()
 
-#Projections ------------
-latlong <- "+proj=longlat +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
-
 maritimes_network <- data_draft_areas()%>%
   st_transform(CanProj)%>%
   st_make_valid()%>%
@@ -39,14 +36,48 @@ esi_poly <- maritimes_network%>%
 #species habitat loss ----- 
 #focal species
 
+#read in the species metadata 
+
+sp_meta <- read.csv("c:/Users/stanleyr/Documents/Github/MAR_thermal_emerg/data/species_grouping.csv")%>%
+           rename(common_name = ComName,
+                  species = SciName)%>%
+           mutate(common_name = case_when(common_name == "(ESS/WSS) Atlantic cod" ~ "Atlantic cod",
+                                          common_name == "(ESS/WSS)pollock"~ "Pollock",
+                                          common_name == "(ESS/WSS)haddock"~ "Haddock",
+                                          TRUE ~ common_name))%>%
+           distinct(species,.keep_all=TRUE)
+
 focal_sp <- c("Homarus americanus","Gadus morhua","Hippoglossus hippoglossus","Pollachius virens")
 
 #load the time of emergence summaries
 load("c:/Users/stanleyr/Documents/Github/MAR_thermal_emerg/output/toe_summaries/all_toe_summaries.RData")
 
+esi_df <- toe_summaries%>%
+          filter(NAME == "Eastern Shore Islands",
+                 mod == "Ensemble")%>%
+          left_join(.,sp_meta%>%
+                      dplyr::select(common_name,species,functional_group,importance))
+
+esi_sp <- esi_df%>%pull(species)%>%unique()
+
+habitat_loss_df <- NULL
+
+for(i in unique(esi_df$species)){
+  for(j in unique(esi_df$climate_proj)){
+    
+    temp <- esi_df%>%
+            filter(species == i,
+                   climate_proj == j)
+    
+    
+    
+  }
+  
+}
+
 toe_dat <- toe_summaries%>%
   filter(mod != "GFDL",
-         species %in% focal_sp,
+         #species %in% focal_sp,
          NAME == "Eastern Shore Islands")%>%
   mutate(climate_proj = gsub("\\.","-",climate_proj))# the . was left in from the ensemble calculation
 
@@ -118,12 +149,11 @@ habitat_loss_site <- toe_dat%>%
   ungroup()%>%
   data.frame()%>%
   mutate(climate_proj_fact=factor(ifelse(climate_proj == "2-6","RCP 2.6","RCP 8.5")),
-         mod = factor(mod, levels=c("AWI","IPSL","HAD","Ensemble")))%>%
-  left_join(.,focal_sp_df)
+         mod = factor(mod, levels=c("AWI","IPSL","HAD","Ensemble")))
 
 
 #construct the plot
-esi_loss <- ggplot(habitat_loss_site, aes(x = ToE, y = cum_sum, color = mod,linetype = mod)) +
+esi_loss <- ggplot(habitat_loss_site%>%filter(species %in% focal_sp), aes(x = ToE, y = cum_sum, color = mod,linetype = mod)) +
   geom_line(linewidth = 1,show.legend = FALSE) +
   geom_point(shape=21,aes(fill=mod),col="black",size=2.1, alpha = 0.6) +
   facet_grid(species~climate_proj_fact) +
@@ -160,6 +190,114 @@ esi_loss <- ggplot(habitat_loss_site, aes(x = ToE, y = cum_sum, color = mod,line
 ggsave("output/ESI_2025_CSAS/esi_focal_habitat_loss.png",esi_loss,height=7.1,width=8,units="in",dpi=600)
 
 
+#habitat loss by species 
+benchmark_years <- c(2025,2050,2075,2100)
+
+
+assign_decade <- function(year) {
+  if (year >= 2500) return(2100)  # Handle the 2500 case
+  return(floor(year/10) * 10)
+}
+
+habitat_loss_processed <- habitat_loss_site %>%
+  #filter(ToE != 2500)%>%
+  # Add decade column
+  mutate(decade = sapply(ToE, assign_decade)) %>%
+  # Group by relevant variables and get max cumulative sum for each decade
+  group_by(climate_proj, mod, species, decade) %>%
+  summarise(max_cum_sum = max(cum_sum), .groups = 'drop') %>%
+  # Complete the dataset with missing decades
+  complete(
+    climate_proj, mod, species,
+    decade = seq(2030, 2100, by = 10),
+    fill = list(max_cum_sum = 0)
+  ) %>%
+  # Forward fill the cumulative sums within each group
+  group_by(climate_proj, mod, species) %>%
+  arrange(decade) %>%
+  fill(max_cum_sum) %>%
+  # Calculate the difference between decades to get the incremental loss
+  mutate(
+    incremental_loss = max_cum_sum - lag(max_cum_sum, default = 0)
+  ) %>%
+  ungroup()
+
+# First prepare the data as you have done
+plot_df <- habitat_loss_processed %>%
+            filter(decade > 2020,
+                   decade < 2100,
+                   mod == "Ensemble",
+                   !species %in% c("Sebastes mentella", "Calanus glacialis","Eubalaena glacialis","Calanus finmarchicus","Chionoecetes opilio"))%>%
+            left_join(.,sp_meta%>%
+                         dplyr::select(common_name,species,functional_group))
+
+species_order_df <- plot_df %>%
+  filter(climate_proj == "8-5") %>%
+  group_by(functional_group,species) %>%
+  summarize(max_loss = max(max_cum_sum), .groups = 'drop') %>%
+  arrange(max_loss)%>%
+  left_join(plot_df%>%distinct(species,.keep_all=TRUE)%>%dplyr::select(species,common_name))
+
+
+species_order_df <- plot_df %>%
+  group_by(species, climate_proj) %>%
+  summarize(max_loss = max(max_cum_sum), .groups = 'drop') %>%
+  # Filter to just one climate projection for ordering
+  filter(climate_proj == "8-5") %>%
+  arrange(max_loss)%>%
+  left_join(plot_df%>%distinct(species,.keep_all=TRUE)%>%dplyr::select(species,common_name))
+
+species_order <- species_order_df%>%pull(species)
+common_order <- species_order_df%>%pull(common_name)
+
+# Update the plot_df with new species ordering
+plot_df <- plot_df %>%
+  mutate(
+    # Order species by maximum loss
+    species = factor(species, levels = species_order),
+    common_name = factor(common_name,levels=common_order),
+    # Keep decades in reverse chronological order
+    decades = paste0(decade, "s"),
+    decades = factor(decades, levels = paste0(sort(unique(decade), decreasing = TRUE), "s")),
+    climate_proj = ifelse(climate_proj == "8-5","RCP 8.5","RCP 2.6"),
+    climate_proj = factor(climate_proj,levels=c("RCP 8.5","RCP 2.6"))
+    )
+
+# Create the plot with custom colors
+custom_colors <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", "#FF7F00", "#FFFF33", "#A65628")
+
+esi_toe_hab <- ggplot(plot_df %>% arrange(desc(decade)),
+       aes(x = max_cum_sum,
+           y = common_name, 
+           fill = decades)) +
+  geom_vline(xintercept = 0.5,lty=2)+
+  geom_col(position = "identity",
+           width = 0.7,col="black",linewidth=0.25) +
+  scale_x_continuous(
+    labels = scales::percent,
+    limits = c(0, 1)
+  ) +
+  
+  scale_fill_manual(values = custom_colors) +
+  facet_wrap(~climate_proj, ncol = 1) +
+  labs(
+    x = "Proportion of habitat reaching ToE",
+    y = NULL
+  ) +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 8),
+    legend.position = "right",
+    strip.text = element_text(size = 10),
+    strip.background = element_rect(fill="white"),
+    plot.title = element_text(hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.title = element_blank()
+  )
+
+ggsave("output/ESI_2025_CSAS/habtiat_toe_species.png",esi_toe_hab,height=7,width=6,units="in",dpi=600)
 #Temperature timeseries ------
 
 setwd("c:/Users/stanleyr/Documents/Github/MAR_thermal_emerg/")
