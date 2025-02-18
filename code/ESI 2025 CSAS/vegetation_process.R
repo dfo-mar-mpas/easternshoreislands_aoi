@@ -32,7 +32,7 @@ coastal_veg_sites <- read.csv("data/coastal_vegetation_site_list.csv")
 ##Eelgrass -----------
 
 #ingest eelgrass polygons
-eg_path <- "c:/Users/stanleyr/Desktop/National_Eelgrass_Dataset_Canada_NETForce_Scotian_Shelf.gdb/National_Eelgrass_Dataset_Canada_NETForce_Scotian_Shelf.gdb/"
+eg_path <- "E:/Vegetation/National_Eelgrass_Dataset_Canada_NETForce_Scotian_Shelf.gdb/"
 
 layers <- st_layers(eg_path) #view layers
 
@@ -71,7 +71,7 @@ rm(eeelgrass_data_pa,eelgrass_proj,maritimes_network_eg,eelgrass_total_area,eelg
 
 #Balbar/Metaxas kelp -----------------------
 
-kelp_balbar <- read_sf("data/Vegetation/Kelp_SDM.shp")%>%
+kelp_balbar <- read_sf("E:/Vegetation/Kelp_SDM.shp")%>%
                st_transform(CanProj)
 
 kelp_total_area <- kelp_balbar%>%
@@ -99,7 +99,7 @@ rm(kelp_balbar,kelp_pa_intersection,kelp_total_area)#clean up workspace
 
 #Rockweed -----------------
 
-rockweed_df <- read_sf("data/Vegetation/MARboundary_rockweed_presence_validated_2021-04-07_NDVIstats_substrate.shp")
+rockweed_df <- read_sf("E:/Vegetation/MARboundary_rockweed_presence_validated_2021-04-07_NDVIstats_substrate.shp")
 
 rockweed_total_area <- rockweed_df%>%
   st_union()%>%
