@@ -17,13 +17,10 @@ library(patchwork)
 library(units)
 library(ggforce)
 
-source("code/ESI 2025 CSAS/random_raster_gen_functions.R")
-
 #Load projections
 latlong <- "+proj=longlat +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
 utmkm <- "+proj=utm +zone=20 +datum=NAD83 +units=km +no_defs +ellps=GRS80 +towgs84=0,0,0"
 CanProj <- "+proj=lcc +lat_1=49 +lat_2=77 +lat_0=63.390675 +lon_0=-91.86666666666666 +x_0=6200000 +y_0=3000000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
-
 
 #Basemaps
 bioregion <- data_planning_areas()%>%
