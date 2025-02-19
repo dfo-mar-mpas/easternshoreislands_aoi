@@ -113,6 +113,23 @@ nkelp_df <- sdm_df %>%
   slice_max(order_by = prop_region, n = 5, with_ties = FALSE) %>%
   ungroup()
 
+#add in the composite AIS layer
+ais_rast <- rast("e:/Vegetation/AIS indices/AIS_Index_Bathy_Continuous_20240306.tif")
+
+rast_proj <- terra::crs(ais_rast)
+
+raster_trim <- maritimes_network%>%
+  filter(name=="Eastern Shore Islands")%>%
+  st_transform(utmkm)%>%
+  st_buffer(10)%>% #2km buffer
+  st_transform(rast_proj)%>%
+  st_bbox()%>%
+  st_as_sfc()%>%
+  terra::vect()
+
+esi_ais_rast <- ais_rast%>%
+  terra::crop(.,raster_trim)%>%
+  terra::project(CanProj)
 
 # Create a modified dataframe with proper ordering within facets
 nkelp_df_ordered <- nkelp_df %>%
