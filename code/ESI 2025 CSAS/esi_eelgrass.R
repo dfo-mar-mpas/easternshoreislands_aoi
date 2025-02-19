@@ -131,6 +131,15 @@ esi_ais_rast <- ais_rast%>%
   terra::crop(.,raster_trim)%>%
   terra::project(CanProj)
 
+# ggplot()+
+#   geom_spatraster(data=esi_ais_rast)+
+#   geom_sf(data=maritimes_network%>%filter(name == "Eastern Shore Islands"),fill=NA)+
+#   geom_sf(data=coast_hr)+
+#   coord_sf(expand=0,xlim=plotlims_small[c(1,3)],ylim=plotlims_small[c(2,4)])+
+#   theme_bw()+
+#   annotation_scale(location="tl")+
+#   scale_fill_viridis(na.value = "transparent")
+
 # Create a modified dataframe with proper ordering within facets
 nkelp_df_ordered <- nkelp_df %>%
   group_by(sp) %>%
