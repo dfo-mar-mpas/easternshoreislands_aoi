@@ -26,6 +26,16 @@ maritimes_network <- data_draft_areas()%>%
   rename(status=Classification_E,name=SiteName_E)%>%
   st_make_valid()
 
+##coastal vegetation camera drops
+cam_path <- "data/Vegetation/Camera_Surveys_NovaScotia_NewBrunswick_2022_2023.gdb/"
+layers <- st_layers(cam_path) #view layers
+cam_points <- st_read(cam_path, 
+                            layer = "MCT_Camera_Surveys_SubtidalFlora_NovaScotia_NewBrunswick_2022_2023")%>%
+              st_transform(CanProj)%>%
+              st_join(.,maritimes_network%>%dplyr::select(name))
+
+sum(cam_points$name == "Eastern Shore Islands",na.rm=T)
+
 #coastal sites in the network (names)
 coastal_veg_sites <- read.csv("data/coastal_vegetation_site_list.csv")
 
