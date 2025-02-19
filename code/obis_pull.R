@@ -68,3 +68,5 @@ save(obis_data,file="data/robis_esi_10km_buffer.RData")
 # Optionally, filter the data to retain only points strictly within the polygon
 obis_sf <- st_as_sf(obis_data, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
 obis_filtered <- obis_sf[st_within(obis_sf, polygon, sparse = FALSE), ]
+
+save(obis_filtered,file="data/robis_esi.RData")
