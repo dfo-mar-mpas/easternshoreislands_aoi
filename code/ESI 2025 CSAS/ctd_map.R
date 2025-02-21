@@ -2,19 +2,13 @@
 ## load libraries
 library(sf)
 library(tidyverse)
-library(rnaturalearth)
 library(MarConsNetData)
 library(ggspatial)
 library(terra)
 library(tidyterra)
 library(viridis)
 library(scales)
-library(patchwork)
 library(units)
-library(Mar.datawrangling)
-library(taxize)
-library(worrms)
-library(terra)
 
 #Load projections
 latlong <- "+proj=longlat +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
