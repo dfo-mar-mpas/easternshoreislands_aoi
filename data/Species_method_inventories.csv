@@ -1,0 +1,209 @@
+method,latin,common,location
+eDNA,Alopias vulpinus,Thresher Shark,Offshore
+eDNA,Alosa,Shads and Alewife,Coastal and offshore
+eDNA,Ammodytes,Sand lance,Coastal and offshore
+eDNA,Ameiurus nebulosus,Brown bullhead,Sheet Harbour Estuary
+eDNA,Anguilla rostrata,American Eel,Coastal
+eDNA,Anarhichas denticulatus,Northern Wolffish,Offshore
+eDNA,Anarhichas lupus,Atlantic Wolffish,Coastal and offshore
+eDNA,Apeltes quadracus,Fourspine Stickleback,Coastal and offshore
+eDNA,Argentina silus,Atlantic Argentine,Offshore
+eDNA,Auxis rochei,Bullet Tuna,Coastal
+eDNA,Balistes capriscus,Grey Triggerfish,Coastal and offshore
+eDNA,Caranx hippos,Crevalle Jack,Coastal and offshore
+eDNA,Catostomus commersonii,White Sucker,Sheet Harbour Estuary
+eDNA,Cetorhinus maximus,Basking Shark,Offshore
+eDNA,Chaetodon ocellatus,Spotfin Butterflyfish,Coastal
+eDNA,Clupea harengus,Atlantic Herring,Coastal and offshore
+eDNA,Cryptacanthodes maculatus,Wrymouth,Coastal and offshore
+eDNA,Dipturus batis,Blue Skate,Offshore
+eDNA,Eumesogrammus praecisus,Fourline Snakeblenny,Coastal and offshore
+eDNA,Fundulus hetroclitus,Mummichog,Coastal
+eDNA,Gadus morhua,Atlantic Cod,Coastal and offshore
+eDNA,Gasterosteus aculeatus,Three-spined Stickleback,Coastal
+eDNA,Gasterosteus wheatlandi,Blackspotted Stickleback,Coastal
+eDNA,Glyptocephalus cynoglossus,Witch Flounder,Offshore
+eDNA,Hemitripterus americanus,Sea Raven,Coastal and offshore
+eDNA,Hippoglossus hippoglossus,Atlantic Halibut,Coastal and offshore
+eDNA,Lamna nasus,Porbeagle,Offshore
+eDNA,Leptoclinus maculatus,Daubed Shanny,Offshore
+eDNA,Liparis,Snailfish,Coastal and offshore
+eDNA,Lophius americanus,Goosefish,Offshore
+eDNA,Lumpenus fabricii,Slender eelblenny,Offshore
+eDNA,Lumpenus lampretaeformis,Snakeblenny,Coastal and offshore
+eDNA,Lycodes vahlii,Vahl’s Eelpout,Offshore
+eDNA,Malacoraja spinacidermis,Soft Skate,Offshore
+eDNA,Melanogrammus aeglefinus,Haddock,Offshore
+eDNA,Menidia menidia,Atlantic Silverside,Coastal and offshore
+eDNA,Merluccius bilinearis,Silver Hake,Coastal and offshore
+eDNA,Microgadus tomcod,Atlantic Tomcod,Coastal and offshore
+eDNA,Myoxocephalus octodecemspinosus,Longhorn Sculpin,Coastal and offshore
+eDNA,Myoxocephalus scorpius,Shorthorn Sculpin,Coastal and offshore
+eDNA,Notemigonus crysoleucas,Golden Shiner,Offshore
+eDNA,Osmerus mordax,Rainbow Smelt,Coastal and offshore
+eDNA,Peprilus triacanthus,American Butterfish,Coastal and offshore
+eDNA,Perca flavescens,Yellow Perch,Coastal
+eDNA,Pholis gunnellus,Rock Gunnel,Coastal and offshore
+eDNA,Pollachius virens,Pollock,Coastal and offshore
+eDNA,Prionace glauca,Blue Shark,Offshore
+eDNA,Pseudopleuronectes americanus,Winter Flounder,Coastal and offshore
+eDNA,Salmo salar,Atlantic Salmon,Offshore
+eDNA,Salvelinus fontinalis,Brook Trout,Offshore
+eDNA,Scomber scombrus,Atlantic Mackerel,Coastal and offshore
+eDNA,Scomberesox saurus,Atlantic Saury,Offshore
+eDNA,Scophthalmus aquosus,Windowpane Flounder,Coastal
+eDNA,Sebastes mentella*,Deepwater Redfish,Offshore
+eDNA,Selene setapinnis,Atlantic Moonfish,Offshore
+eDNA,Squalus acanthias,Spiny Dogfish,Offshore
+eDNA,Syngnathus fuscus,Northern Pipefish,Coastal
+eDNA,Tautogolabrus adspersus,Cunner,Coastal and offshore
+eDNA,Thunnus thynnus,Bluefin Tuna,Offshore
+eDNA,Triglops murrayi,Moustache Sculpin,Offshore
+eDNA,Ulvaria subbifurcata,Radiated Shanny,Coastal
+eDNA,Urophycis chuss,Red Hake,Offshore
+eDNA,Urophycis tenuis,White Hake,Offshore
+eDNA,Zoarces americanus,Ocean Pout,Coastal and offshore
+eDNA,Balaenoptera acutorostrata,Minke Whale,Offshore
+eDNA,Delphinus delphinus,Common Dolphin,Offshore
+eDNA,Eubalaena glacialis,North Atlantic Right Whale,Offshore
+eDNA,Halichoerus grypus,Grey Seal,Offshore
+eDNA,Lagenorhynchus acutus,Atlantic White-sided Dolphin,Offshore
+eDNA,Phocoena phocoena,Harbour Porpoise,Offshore
+eDNA,Alca torda,Razorbill,Taylor Head Provincial Park
+eDNA,Anas platyrhynchos,Mallard Duck,Moosehead
+eDNA,Acrochaetium moniliforme,Red algae (invasive),Coastal
+eDNA,Acrochaetium secundatum,Red algae,Coastal
+eDNA,Ahnfeltia plicata,Landlady’s Wig (red algae),Coastal
+eDNA,Bonnemaisonia hamifera,Red algae (invasive),Coastal
+eDNA,Callithamnion corybosum,Red algae,Coastal
+eDNA,Ceramium virgatum ,Red hornweed,Coastal
+eDNA,Chondrus crispus,Irish moss (red algae),Coastal and offshore
+eDNA,Corallina officinalis,Calcareous red algae,Coastal
+eDNA,Cylindrotheca Closterium,Diatom,Coastal
+eDNA,Cystoclonium purpureum,Bushy red algae,Coastal
+eDNA,Dasysiphonia japonica,Red algae (invasive),Coastal and offshore
+eDNA,Dumontia contorta,Red algae,Coastal
+eDNA,Hildenbrandia rubra,Red algae,Coastal
+eDNA,Melanothamnus harveyi,Red algae,Coastal
+eDNA,Micromonas pusilla,Green algae,Coastal and offshore
+eDNA,Polyides rotunda,Red algae,Coastal
+eDNA,Polysiphonia flexicaulis,Red algae,Coastal
+eDNA,Polysiphonia stricta,Red algae,Coastal
+eDNA,Rhodomela lycopodioides,Red algae,Coastal
+eDNA,Rhodophysema georgei,Red algae,Coastal
+eDNA,Sphacelaria cirrosa,Brown algae,Coastal
+eDNA,Sphaerotrichia divaricata,Branching brown algae,Coastal
+eDNA,Vertebrata fucoides,Red algae,Coastal
+eDNA,Vertebrata lanosa,Red algae,Coastal
+eDNA,Acartia hudsonica,Copepod,Coastal and offshore
+eDNA,Acartia tonsa,Copepod,Coastal
+eDNA,Alitta virens,Sandworm,Coastal
+eDNA,Ameritella agilis,Northern Dwarf-tellin,Coastal
+eDNA,Amphibalanus improvisus,Bay Barnacle,Coastal
+eDNA,Amphitrite figulus,Polychaete worm,Coastal
+eDNA,Arenicola marina,Lugworm,Coastal
+eDNA,Asterias forbesi,Forbes Seastar,Coastal
+eDNA,Asterias rubens,Common Seastar,Coastal
+eDNA,Astyris lunata,Lunate Dove snail,Coastal
+eDNA,Aurelia aurita,Moon Jellyfish,Offshore
+eDNA,Balanus balanus,Barnacle,Coastal and offshore
+eDNA,Balanus crenatus,Barnacle,Coastal and offshore
+eDNA,Boonea bisaturalis,Two-groove snail (invasive),Coastal
+eDNA,Botrylloides violaceus,Violet Tunicate (invasive),Coastal
+eDNA,Botryllus schlosseri,Golden Star Tunicate (invasive),Coastal
+eDNA,Bougainvillia muscus,Hydrozoan,Coastal
+eDNA,Bougainvillia superciliaris,Hydrozoan jellyfish,Offshore
+eDNA,Calanus finmarchicus,Copepod,Coastal and offshore
+eDNA,Calanus glacialis,Copepod,Offshore
+eDNA,Calanus hyperboreus,Copepod,Offshore
+eDNA,Calliopius laeviusculus,Amphipod,Coastal
+eDNA,Cancer irroratus,Rock Crab,Coastal
+eDNA,Carcinus maenas,Green Crab,Coastal
+eDNA,Capitella capitata,Polychaete worm,Coastal
+eDNA,Centropages hamatus,Copepod,Coastal
+eDNA,Centropages typicus,Copepod,Coastal
+eDNA,Clausocalanus pergens,Copepod,Offshore
+eDNA,Clymenella torquata,Polychaete worm,Coastal
+eDNA,Clytia hemisphaerica,Hydrozoan jellyfish,Coastal
+eDNA,Crepidula plana,Eastern white slippersnail,Coastal
+eDNA,Cryptocotyle lingua,Parasitic flatworm,Coastal
+eDNA,Cyrtodaria siliqua,Northern Propellerclam,Offshore
+eDNA,Dexamine thea,Amphipod,Coastal
+eDNA,Dinophilus vorticoides,Polychaete worm (possibly invasive),Coastal
+eDNA,Doto coronata,Nudibranch (possibly invasive),Coastal
+eDNA,Dynamena pumila,Hydrozoan,Coastal
+eDNA,Echinarachnius parma,Common Sand dollar,Coastal
+eDNA,Eualus pusiolus,Doll Shrimp,Offshore
+eDNA,Eubranchus,Nudibranch,Offshore
+eDNA,Euchlanis dilatata,Freshwater rotifer,Coastal
+eDNA,Euclymene zonalis,Polychaete worm,Offshore
+eDNA,Eurytemora herdmani,Copepod,Coastal and offshore
+eDNA,Evadne nordmanni,Planktonic crustacean,Coastal and offshore
+eDNA,Glycera dibranchiata,Bloodworm,Coastal
+eDNA,Geukensia demissa,Atlantic Ribbed Mussel,Coastal
+eDNA,Halocladius variabilis,Coastal midge,Offshore
+eDNA,Halichondria panicea,Breadcrumb sponge,Coastal
+eDNA,Harmothoe imbricata,Polychaete worm,Coastal
+eDNA,Harpacticus uniremis,Copepod,Coastal
+eDNA,Hypereteone heteropoda,Polychaete worm,Coastal
+eDNA,Ilyanassa trivttata,Snail,Coastal
+eDNA,Jaera albifrons,Isopod,Coastal
+eDNA,Juxtacribilina mutabilis,Bryozoan (invasive),Coastal
+eDNA,Kelliopsis elevata,Marine bivalve,Coastal
+eDNA,Lacuna vincta,Lacuna snail,Coastal and offshore
+eDNA,Laomedea flexuosa  ,Hydrozoan,Coastal
+eDNA,Lepidonotus squamatus,Polychaete worm,Coastal
+eDNA,Littorina littorea,Periwinkle snail,Coastal
+eDNA,Macoma calcarea,Tellin Clam,Offshore
+eDNA,Marenzelleria viridis,Polychaete worm,Offshore
+eDNA,Membranipora membranacea,Bryozoan (invasive),Coastal and offshore
+eDNA,Metridia lucens,Copepod,Offshore
+eDNA,Micronephthys neotena,Polychaete worm,Offshore
+eDNA,Microstomum,Polychaete worm,Offshore
+eDNA,Micrura varicolor,Nemertean worm,Offshore
+eDNA,Modiolus modiolus,Horse Mussel,Coastal
+eDNA,Mya arenaria,Soft-shell clam,Coastal
+eDNA,Mytilus trossulus,Pacific blue mussel,Coastal
+eDNA,Myxicola infundibulum,Polychaete worm,Coastal
+eDNA,Nicolea zostericola,Polychaete worm,Coastal
+eDNA,Obelia geniculata,Hydroid,Coastal and offshore
+eDNA,Obelia longissima,Hydroid,Coastal and offshore
+eDNA,Oithona similis,Copepod,Coastal
+eDNA,Ophelina acuminata,Polychaete worm,Offshore
+eDNA,Ophiopholis aculeatus,Daisy Brittlestar,Coastal and offshore
+eDNA,Pherusa affinis,Polychaete worm,Coastal
+eDNA,Phyllodoce maculata,Polychaete worm,Offshore
+eDNA,Pholoe assimilis,Polychaete worm,Offshore
+eDNA,Pholoe minuta,Polychaete worm,Coastal and offshore
+eDNA,Pleurobrachia pileus,Comb jelly,Coastal and offshore
+eDNA,Polydora cornuta,Polychaete worm,Coastal
+eDNA,Polydora onagawaensis,Shell boring polychaete worm (possibly invasive),Coastal
+eDNA,Polygordius jouinae,Polychaete worm,Coastal and offshore
+eDNA,Prionospio steenstrupi,Polychaete worm,Coastal and offshore
+eDNA,Pseudocalanus minutus,Copepod,Offshore
+eDNA,Pseudocalanus moultoni,Copepod,Offshore
+eDNA,Pseudocalanus newmani,Copepod,Coastal and offshore
+eDNA,Rathkea octopunctata,Hydrozoan jellyfish,Coastal
+eDNA,Saccoglossus bromophenolosus,Hemichordate worm,Offshore
+eDNA,Sarsia tubulosa,Hydrozoan jellyfish,Coastal
+eDNA,Scoletoma fragilis,Polychaete worm,Offshore
+eDNA,Strongylocentrotus droebachiensis,Green Sea Urchin,Offshore
+eDNA,Strongylocentrotus pallidus,Pale Sea Urchin,Offshore
+eDNA,Synchaeta triophthalma,Marine rotifer (possibly invasive),Coastal
+eDNA,Temora longicornis,Copepod,Coastal
+eDNA,Terschellingia longicaudata,Nematode worm (possibly invasive),Offshore
+eDNA,Thalestris longimana,Copepod,Coastal
+eDNA,Tiaropsis multicirrata,Hydrozoan jellyfish,Coastal
+eDNA,Thysanoessa inermis,Krill,Offshore
+eDNA,Tortanus discaudatus,Copepod,Coastal and offshore
+eDNA,Trochochaeta multisetosa,Polychaete worm,Coastal and offshore
+eDNA,Turbonilla powhatani,Pyramid snail,Coastal
+eDNA,Turtonia minuta,Marine snail,Coastal
+Acoustic,Hippoglossus hippoglossus,Atlantic halibut,Acoustic
+Acoustic,Salmo salar,Atlantic Salmon,Acoustic
+Acoustic,Acipenser oxyrinchus oxyrinchus,Atlantic Sturgeon,Acoustic
+Acoustic,Prionace glauca,Blue Shark,Acoustic
+Acoustic,Thunnus thynnus,Bluefin Tuna,Acoustic
+Acoustic,Halichoerus grypus,Grey Seal,Acoustic
+Acoustic,Dermochelys coriacea,Leatherback Turtle,Acoustic
+Acoustic,Carcharodon carcharias,White Shark,Acoustic
