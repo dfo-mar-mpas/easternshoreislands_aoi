@@ -11,6 +11,8 @@ library(ggnewscale)
 library(robis)
 library(worrms)
 library(taxize)
+library(ggvenn)
+library(eulerr)
 
 source("code/venn_bar.R")
 
@@ -139,6 +141,30 @@ bar_plot_direct2 <- venn_bar(bar_direct2)
 ggsave("output/ESI_2025_CSAS/eDNA_vs_other.png",bar_plot_direct2,width=6,height=6,units="in",dpi=600)
 
 
+venn_data <- total_esi_taxonomy %>%
+  filter(!is.na(Species),
+         meth != "obis")%>%
+  group_by(meth) %>%
+  summarize(aphiaID_list = list(unique(aphiaID))) %>%
+  deframe()  # Convert to named list
+
+venn_counts <- euler(venn_data)
+
+png("output/ESI_2025_CSAS/venn_eDNA_other.png",width=6,height=6,units="in",res=600)
+plot(venn_counts, quantities = list(na = ""))
+dev.off()
+
+venn_data2 <- total_esi_taxonomy %>%
+  filter(!is.na(Species))%>%
+  group_by(meth) %>%
+  summarize(aphiaID_list = list(unique(aphiaID))) %>%
+  deframe()  # Convert to named list
+
+venn_counts2 <- euler(venn_data2)
+
+png("output/ESI_2025_CSAS/venn_eDNA_obis_other.png",width=6,height=6,units="in",res=600)
+plot(venn_counts2, quantities = list(na = ""))
+dev.off()
 
 ### taxonomic processes
 # edna_df <- read.csv("data/Species_method_inventories.csv")%>%
