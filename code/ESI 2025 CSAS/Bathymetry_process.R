@@ -9,6 +9,7 @@ library(rnaturalearth)
 library(MarConsNetData)
 library(viridis)
 library(ggspatial)
+library(ggridges)
 
 #Load projections
 latlong <- "+proj=longlat +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"
@@ -70,9 +71,99 @@ p1 <- ggplot()+
 
 ggsave("output/ESI_2025_CSAS/esi_gaps_raster.png",p1,height=5,width=5,units="in",dpi=300)
 
+#for presentation
 
-#expand the raster to include sheet harbour
+ctd_stations <- read.csv("data/Oceanography/2021_EasternShore_sites.csv")%>%
+                distinct(Site,.keep_all = TRUE)%>%
+                st_as_sf(coords=c("long","lat"),crs=latlong)%>%
+                st_transform(CanProj)%>%
+                mutate(group=ifelse(grepl("ESI",Site),"ESI","River"),
+                       group=ifelse(Site=="ESI-00","River",group))%>%
+                filter(Site %in% c( "ESI-4","ESI-3","ESI-2","ESI-1"))
+                            
 
+contour_line <- as.contour(esi_dem, levels = -60)%>%
+  st_as_sf()%>%
+  st_transform(CanProj)%>%
+  st_intersection(esi_poly)
+
+
+p1_pres <- ggplot()+
+  geom_spatraster(data=esi_dem)+
+  geom_sf(data=coastline_hr)+
+  geom_sf(data=esi_poly,fill=NA)+
+  geom_sf(data=contour_line,linewidth=0.3,col="black")+
+  geom_sf(data=ctd_stations,shape=21,fill="white",size=1.3)+
+  scale_fill_viridis(na.value = "transparent",option="magma")+
+  theme_bw()+
+  coord_sf(expand=0,xlim=esi_lims[c(1,3)],ylim=esi_lims[c(2,4)])+
+  labs(fill="Depth (m)")+
+  theme(legend.position = "none",
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        panel.grid = element_blank(),
+        panel.background = element_rect(fill = "transparent", colour = NA),
+        plot.background = element_rect(fill = "transparent", colour = NA),
+        panel.border = element_blank())
+
+        
+        ggsave("output/ESI_2025_CSAS/esi_map_pres.png",p1_pres,height=5,width=5,units="in",dpi=300,bg = "transparent")
+
+#ridgeline plot
+        
+        # #is slow but seems to run slightly faster using non-dplyr
+        bathymetry_values <- as.data.frame(values(esi_dem), col.names = "depth")
+
+        # Remove NA values
+        bathymetry_values <- na.omit(bathymetry_values)
+
+        #clean up names
+        names(bathymetry_values) <- "depth"
+        
+        bathymetry_df <- bathymetry_values%>%
+                        rename(depth = 1)%>%
+                        sample_n(sample_frac)%>%
+                        mutate(depth_bin = floor(depth / 2) * 2) %>%
+                        filter(depth<0)
+
+        
+        # save(bathymetry_values,file="data/bathymetry_values_cut_2m.RData")
+        load("data/bathymetry_values_cut_2m.RData")
+        
+        sample_size <- ceiling(nrow(bathymetry_values) * 0.05)
+        
+        bathymetry_df <- bathymetry_values %>%
+          sample_n(sample_size) %>%
+          filter(depth < 0)
+        
+        # Add a constant column for the y-axis
+        bathymetry_df$y <- "Depth Profile"
+        
+        # Create a single ridge plot
+        p1_ridge <- ggplot(bathymetry_df, aes(x = depth, y = y, fill = ..x..)) +
+          geom_density_ridges_gradient(scale = 10, rel_min_height = 0.01, justify = "right") + # Justify to right
+          scale_fill_viridis_c(option = "magma", direction = 1) +
+          coord_flip() +
+          #scale_x_reverse() +  # Makes shallower depths appear at the top
+          theme_ridges() +
+          labs(y = "", x = "Depth (m)", fill = "Depth (m)") +
+          theme(
+            legend.position = "right",
+            # Keep the y-axis text but make it smaller
+            axis.text.y = element_text(size = 8),
+            # Adjust plot margins to reduce whitespace
+            plot.margin = margin(t = 5, r = 5, b = 5, l = 5),
+            # Adjust the panel margins
+            panel.spacing = unit(0.5, "lines"),
+            panel.background = element_rect(fill = "transparent", colour = NA),
+            plot.background = element_rect(fill = "transparent", colour = NA)
+          ) +
+          # This expands the plot to fill available space
+          scale_y_discrete(expand = c(0, 0))
+        
+        ggsave("output/ESI_2025_CSAS/esi_depth_ridges.png",p1_ridge,height=8,width=5,units="in",dpi=600,bg="transparent")
+        
+      
 # sheet_harbour_nonna <- paste0("data/Bathymetry/NONNA/NONNA10_",c("4480N06260W","4480N06250W","4490N06260W","4490N06250W"),".tiff")
 # 
 # raster_list <- lapply(sheet_harbour_nonna, rast)
