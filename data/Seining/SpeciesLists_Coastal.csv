@@ -1,0 +1,329 @@
+index,family,genus,scientific_name,common_name,type,count,coast
+eDNA_taxon01,Hemitripteridae,Hemitripterus,Hemitripterus americanus,sea raven,12s,3292,east
+eDNA_taxon02,Anguillidae,Anguilla,Anguilla rostrata,American eel,12s,73932,east
+eDNA_taxon03,Atherinopsidae,Menidia,Menidia menidia,Atlantic silverside,12s,93690,east
+eDNA_taxon04,Chaetodontidae,Chaetodon,Chaetodon ocellatus,spotfin butterflyfish,12s,419,east
+eDNA_taxon05,Clupeidae,Alosa,Alosa aestivalis,blueback shad,12s,419,east
+eDNA_taxon06,Clupeidae,Alosa,Alosa pseudoharengus,alewife,12s,22201,east
+eDNA_taxon07,Clupeidae,Clupea,Clupea harengus,Atlantic herring,12s,96248,east
+eDNA_taxon08,Cottidae,Gymnocanthus,Gymnocanthus tricuspis,arctic staghorn sculpin,12s,329,east
+eDNA_taxon09,Cottidae,Myoxocephalus,Myoxocephalus octodecemspinosus,longhorn sculpin,12s,880,east
+eDNA_taxon10,Cryptacanthodidae,Cryptacanthodes,Cryptacanthodes giganteus,Giant wrymouth,12s,8210,east
+eDNA_taxon11,Fundulidae,Fundulus,Fundulus heteroclitus,mummichog,12s,72624,east
+eDNA_taxon12,Gadidae,Microgadus,Microgadus tomcod,Atlantic tomcod,12s,145460,east
+eDNA_taxon13,Gadidae,Pollachius,Pollachius virens,saithe,12s,10288,east
+eDNA_taxon14,Gasterosteidae,Apeltes,Apeltes quadracus,fourspine stickleback,12s,27040,east
+eDNA_taxon15,Gasterosteidae,Gasterosteus,Gasterosteus aculeatus,three-spined stickleback,12s,152405,east
+eDNA_taxon16,Gasterosteidae,Gasterosteus,Gasterosteus wheatlandi,blackspotted stickleback,12s,2273,east
+eDNA_taxon17,Labridae,Tautogolabrus,Tautogolabrus adspersus,cunner,12s,197789,east
+eDNA_taxon18,Merlucciidae,Merluccius,Merluccius bilinearis,silver hake,12s,1214,east
+eDNA_taxon19,Moronidae,Morone,Morone saxatilis,striped bass,12s,456,east
+eDNA_taxon20,Pholidae,Pholis,Pholis gunnellus,rock gunnel,12s,670,east
+eDNA_taxon21,Phycidae,Urophycis,Urophycis chuss,red hake,12s,2848,east
+eDNA_taxon22,Phycidae,Urophycis,Urophycis tenuis,white hake,12s,27029,east
+eDNA_taxon23,Scombridae,Scomber,Scomber scombrus,Atlantic mackerel,12s,73664,east
+eDNA_taxon24,Scophthalmidae,Scophthalmus,Scophthalmus aquosus,Windowpane flounder ,12s,2403,east
+eDNA_taxon25,Stichaeidae,Lumpenus,Lumpenus lampretaeformis,snakeblenny,12s,1073,east
+eDNA_taxon26,Syngnathidae,Syngnathus,Syngnathus fuscus,northern pipefish,12s,10109,east
+eDNA_taxon27,Ammodytidae,Ammodytes,Ammodytes americanus,American sand lance,12s,375,east
+eDNA_taxon28,Ammodytidae,Ammodytes,Ammodytes dubius,northern sand lance,12s,190,east
+eDNA_taxon29,Ammodytidae,Ammodytes,Ammodytes tobianus,small sandeel,12s,86764,east
+eDNA_taxon30,Clupeidae,CL1_Alosa_12S,Alosa sapidissima_Alosa fallax,American shad_twaite shad,12s,487,east
+eDNA_taxon31,Cottidae,Myoxocephalus,Myoxocephalus aenaeus,grubby,12s,29830,east
+eDNA_taxon32,Cottidae,CO3_Myoxocephalus_12S,Myoxocephalus quadricornis_Myoxocephalus scorpius,fourhorn sculpin_shorthorn sculpin,12s,49229,east
+eDNA_taxon33,Cyclopteridae,Cyclopterus,Cyclopterus lumpus,lumpfish,12s,324,east
+eDNA_taxon34,Cyclopteridae,CY2_Liparis_12S,Liparis inquilinus_Liparis fabricii,Inquiline snailfish_gelatinous seasnail,12s,483,east
+eDNA_taxon35,Fundulidae,Fundulus,Fundulus diaphanus,banded killifish,12s,517,east
+eDNA_taxon36,Gadidae,GA1_Gadus_12S,Gadus macrocephalus_Gadus morhua_Gadus chalcogrammus,Pacific cod |Atlantic cod |Alaska pollock,12s,1141,east
+eDNA_taxon37,Gadidae,GA3_2genera_12S,Melanogrammus aeglefinus_Merlangius merlangus,haddock_whiting,12s,215,east
+eDNA_taxon38,Pholidae,Pholis,Pholis clemensi,Longfin gunnel,12s,1563,east
+eDNA_taxon39,Pleuronectidae,PL3_Hippoglossus_12S,Hippoglossus hippoglossus_Hippoglossus stenolepis,Atlantic halibut_Pacific halibut,12s,210,east
+eDNA_taxon40,Pleuronectidae,Pseudopleuronectes,Pseudopleuronectes americanus,winter flounder,12s,1231,east
+eDNA_taxon41,Sphyraenidae,Sphyraena,Sphyraena borealis,northern sennet,12s,712,east
+eDNA_taxon42,Stichaeidae,ST1_2genera_12S,Ulvaria subbifurcata_Eumesogrammus praecisus,radiated shanny_fourline snakeblenny,12s,4866,east
+eDNA_taxon43,Ammodytidae,AM2_Ammodytes_16S,Ammodytes hexapterus_Ammodytes personatus,Pacific sand lance_Pacific sandlance,12s,0,east
+eDNA_taxon44,Ammodytidae,AM3_Ammodytes_16S,Ammodytes hexapterus_Ammodytes personatus,Pacific sand lance_Pacific sandlance,12s,0,east
+eDNA_taxon45,Balistidae,Balistes,Balistes vetula,queen triggerfish,12s,0,east
+eDNA_taxon46,Belonidae,Scomberesox,Scomberesox saurus,Atlantic saury,12s,0,east
+eDNA_taxon47,Carangidae,Caranx,Caranx crysos,blue runner,12s,0,east
+eDNA_taxon48,Carangidae,Caranx,Caranx hippos,crevalle jack,12s,0,east
+eDNA_taxon49,Congridae,Conger,Conger oceanicus,American conger,12s,0,east
+eDNA_taxon50,Cottidae,Myoxocephalus,Myoxocephalus quadricornis,fourhorn sculpin,12s,0,east
+eDNA_taxon51,Cottidae,Myoxocephalus,Myoxocephalus scorpius,shorthorn sculpin,12s,0,east
+eDNA_taxon52,Gasterosteidae,Pungitius,Pungitius pungitius,ninespine stickleback,12s,0,east
+eDNA_taxon53,Osmeridae,Osmerus,Osmerus mordax,rainbow smelt ,12s,0,east
+eDNA_taxon54,Pleuronectidae,Hippoglossus,Hippoglossus hippoglossus,Atlantic halibut,12s,0,east
+eDNA_taxon55,Pleuronectidae,PL5_4genera_16S,Platichthys flesus_Platichthys stellatus_Pseudopleuronectes americanus_Parophrys vetulus_Lepidopsetta polyxystra_Lepidopsetta bilineata,European flounder_starry flounder_winter flounder_English sole_northern rock sole_rock sole,12s,0,east
+eDNA_taxon56,Zoarcidae,Zoarces,Zoarces americanus,ocean pout,12s,0,east
+eDNA_taxon01,Hemitripteridae,Hemitripterus,Hemitripterus americanus,sea raven,16s,14488,east
+eDNA_taxon02,Anguillidae,Anguilla,Anguilla rostrata,American eel,16s,577,east
+eDNA_taxon03,Atherinopsidae,Menidia,Menidia menidia,Atlantic silverside,16s,238879,east
+eDNA_taxon04,Chaetodontidae,Chaetodon,Chaetodon ocellatus,spotfin butterflyfish,16s,2013,east
+eDNA_taxon05,Clupeidae,Alosa,Alosa aestivalis,blueback shad,16s,768,east
+eDNA_taxon06,Clupeidae,Alosa,Alosa pseudoharengus,alewife,16s,255,east
+eDNA_taxon07,Clupeidae,Clupea,Clupea harengus,Atlantic herring,16s,11006,east
+eDNA_taxon08,Cottidae,Gymnocanthus,Gymnocanthus tricuspis,arctic staghorn sculpin,16s,3698,east
+eDNA_taxon09,Cottidae,Myoxocephalus,Myoxocephalus octodecemspinosus,longhorn sculpin,16s,2066,east
+eDNA_taxon10,Cryptacanthodidae,Cryptacanthodes,Cryptacanthodes giganteus,Giant wrymouth,16s,35907,east
+eDNA_taxon11,Fundulidae,Fundulus,Fundulus heteroclitus,mummichog,16s,142745,east
+eDNA_taxon12,Gadidae,Microgadus,Microgadus tomcod,Atlantic tomcod,16s,205057,east
+eDNA_taxon13,Gadidae,Pollachius,Pollachius virens,saithe,16s,25367,east
+eDNA_taxon14,Gasterosteidae,Apeltes,Apeltes quadracus,fourspine stickleback,16s,86423,east
+eDNA_taxon15,Gasterosteidae,Gasterosteus,Gasterosteus aculeatus,three-spined stickleback,16s,396424,east
+eDNA_taxon16,Gasterosteidae,Gasterosteus,Gasterosteus wheatlandi,blackspotted stickleback,16s,2567,east
+eDNA_taxon17,Labridae,Tautogolabrus,Tautogolabrus adspersus,cunner,16s,619917,east
+eDNA_taxon18,Merlucciidae,Merluccius,Merluccius bilinearis,silver hake,16s,334,east
+eDNA_taxon19,Moronidae,Morone,Morone saxatilis,striped bass,16s,1071,east
+eDNA_taxon20,Pholidae,Pholis,Pholis gunnellus,rock gunnel,16s,855145,east
+eDNA_taxon21,Phycidae,Urophycis,Urophycis chuss,red hake,16s,3684,east
+eDNA_taxon22,Phycidae,Urophycis,Urophycis tenuis,white hake,16s,46623,east
+eDNA_taxon23,Scombridae,Scomber,Scomber scombrus,Atlantic mackerel,16s,228075,east
+eDNA_taxon24,Scophthalmidae,Scophthalmus,Scophthalmus aquosus,Windowpane flounder ,16s,2486,east
+eDNA_taxon25,Stichaeidae,Lumpenus,Lumpenus lampretaeformis,snakeblenny,16s,5087,east
+eDNA_taxon26,Syngnathidae,Syngnathus,Syngnathus fuscus,northern pipefish,16s,22896,east
+eDNA_taxon27,Ammodytidae,Ammodytes,Ammodytes americanus,American sand lance,16s,0,east
+eDNA_taxon28,Ammodytidae,Ammodytes,Ammodytes dubius,northern sand lance,16s,0,east
+eDNA_taxon29,Ammodytidae,Ammodytes,Ammodytes tobianus,small sandeel,16s,0,east
+eDNA_taxon30,Clupeidae,CL1_Alosa_12S,Alosa sapidissima_Alosa fallax,American shad_twaite shad,16s,0,east
+eDNA_taxon31,Cottidae,Myoxocephalus,Myoxocephalus aenaeus,grubby,16s,0,east
+eDNA_taxon32,Cottidae,CO3_Myoxocephalus_12S,Myoxocephalus quadricornis_Myoxocephalus scorpius,fourhorn sculpin_shorthorn sculpin,16s,0,east
+eDNA_taxon33,Cyclopteridae,Cyclopterus,Cyclopterus lumpus,lumpfish,16s,0,east
+eDNA_taxon34,Cyclopteridae,CY2_Liparis_12S,Liparis inquilinus_Liparis fabricii,Inquiline snailfish_gelatinous seasnail,16s,0,east
+eDNA_taxon35,Fundulidae,Fundulus,Fundulus diaphanus,banded killifish,16s,0,east
+eDNA_taxon36,Gadidae,GA1_Gadus_12S,Gadus macrocephalus_Gadus morhua_Gadus chalcogrammus,Pacific cod_Atlantic cod_Alaska pollock,16s,0,east
+eDNA_taxon37,Gadidae,GA3_2genera_12S,Melanogrammus aeglefinus_Merlangius merlangus,haddock_whiting,16s,0,east
+eDNA_taxon38,Pholidae,Pholis,Pholis clemensi,Longfin gunnel,16s,0,east
+eDNA_taxon39,Pleuronectidae,PL3_Hippoglossus_12S,Hippoglossus hippoglossus_Hippoglossus stenolepis,Atlantic halibut_Pacific halibut,16s,0,east
+eDNA_taxon40,Pleuronectidae,Pseudopleuronectes,Pseudopleuronectes americanus,winter flounder,16s,0,east
+eDNA_taxon41,Sphyraenidae,Sphyraena,Sphyraena borealis,northern sennet,16s,0,east
+eDNA_taxon42,Stichaeidae,ST1_2genera_12S,Ulvaria subbifurcata_Eumesogrammus praecisus,radiated shanny_fourline snakeblenny,16s,0,east
+eDNA_taxon43,Ammodytidae,AM2_Ammodytes_16S,Ammodytes hexapterus_Ammodytes personatus,Pacific sand lance_Pacific sandlance,16s,161086,east
+eDNA_taxon44,Ammodytidae,AM3_Ammodytes_16S,Ammodytes hexapterus_Ammodytes personatus,Pacific sand lance_Pacific sandlance,16s,6511,east
+eDNA_taxon45,Balistidae,Balistes,Balistes vetula,queen triggerfish,16s,184,east
+eDNA_taxon46,Belonidae,Scomberesox,Scomberesox saurus,Atlantic saury,16s,13824,east
+eDNA_taxon47,Carangidae,Caranx,Caranx crysos,blue runner,16s,1761,east
+eDNA_taxon48,Carangidae,Caranx,Caranx hippos,crevalle jack,16s,1486,east
+eDNA_taxon49,Congridae,Conger,Conger oceanicus,American conger,16s,145,east
+eDNA_taxon50,Cottidae,Myoxocephalus,Myoxocephalus quadricornis,fourhorn sculpin,16s,588,east
+eDNA_taxon51,Cottidae,Myoxocephalus,Myoxocephalus scorpius,shorthorn sculpin,16s,188282,east
+eDNA_taxon52,Gasterosteidae,Pungitius,Pungitius pungitius,ninespine stickleback,16s,1314,east
+eDNA_taxon53,Osmeridae,Osmerus,Osmerus mordax,rainbow smelt ,16s,371,east
+eDNA_taxon54,Pleuronectidae,Hippoglossus,Hippoglossus hippoglossus,Atlantic halibut,16s,1104,east
+eDNA_taxon55,Pleuronectidae,PL5_4genera_16S,Platichthys flesus_Platichthys stellatus_Pseudopleuronectes americanus_Parophrys vetulus_Lepidopsetta polyxystra_Lepidopsetta bilineata,European flounder_starry flounder_winter flounder_English sole_northern rock sole_rock sole,16s,221510,east
+eDNA_taxon56,Zoarcidae,Zoarces,Zoarces americanus,ocean pout,16s,656,east
+east_seining_taxon01,Ammodytidae,Ammodytes,NA,Sand lance,seining,4286,east
+east_seining_taxon02,Anguillidae,Anguilla,Anguilla rostrata,American eel,seining,1,east
+east_seining_taxon03,Atherinopsidae,Menidia,Menidia menidia,Atlantic silverside,seining,575,east
+east_seining_taxon04,Carangidae,Caranx,NA,NA,seining,4,east
+east_seining_taxon05,Carangidae,Decapterus,Decapterus macarellus,Mackerel Scad,seining,1,east
+east_seining_taxon06,Carangidae,Trachurus,Trachurus lathami,Rough Scad,seining,1,east
+east_seining_taxon07,Clupeidae,Alosa,NA,NA,seining,32,east
+east_seining_taxon08,Clupeidae,Clupea,Clupea harengus,Atlantic herring,seining,14493,east
+east_seining_taxon09,Cottidae,NA,NA,NA,seining,178,east
+east_seining_taxon10,Cyclopteridae,Cyclopterus,Cyclopterus lumpus,Lumpfish,seining,1,east
+east_seining_taxon11,Fundulidae,Fundulus,Fundulus heteroclitus,Mummichog,seining,16,east
+east_seining_taxon12,Gadidae,Microgadus,Microgadus tomcod,Atlantic tomcod,seining,142,east
+east_seining_taxon13,Gasterosteidae,Apeltes,Apeltes quadracus,Fourspine stickleback,seining,102,east
+east_seining_taxon14,Gasterosteidae,Gasterosteus,Gasterosteus aculeatus,three-spined stickleback,seining,3624,east
+east_seining_taxon15,Gasterosteidae,Pungitius,Pungitius pungitius,Ninespine stickleback,seining,61,east
+east_seining_taxon16,Labridae,Tautogolabrus,Tautogolabrus adspersus,Cunner,seining,59,east
+east_seining_taxon17,Pholidae,Pholis,Pholis gunnellus,Rock Gunnel,seining,7,east
+east_seining_taxon18,Phycidae,Urophycis,Urophycis tenuis,White Hake,seining,31,east
+east_seining_taxon19,Pleuronectidae,Pseudopleuronectes,Pseudopleuronectes americanus,Winter Flounder,seining,30,east
+east_seining_taxon20,Sphyraenidae,Sphyraena,Sphyraena borealis,Northern sennet,seining,3,east
+east_seining_taxon21,Syngnathidae,Syngnathus,Syngnathus fuscus,Northern Pipefish,seining,23,east
+east_seining_taxon22,Tetraodontidae,Sphoeroides,Sphoeroides maculatus,Northern Puffer,seining,2,east
+eDNA_taxon57,Agonidae,Agonopsis,Agonopsis vulsa,northern spearnose poacher,12s,841,west
+eDNA_taxon58,Aulorhynchidae,Aulorhynchus,Aulorhynchus flavidus,tube-snout,12s,3186,west
+eDNA_taxon59,Clupeidae,Clupea,Clupea pallasii,Pacific herring,12s,340628,west
+eDNA_taxon60,Cottidae,Artedius,Artedius fenestralis,padded sculpin,12s,5800,west
+eDNA_taxon61,Cottidae,Artedius,Artedius harringtoni,Scalyhead sculpin,12s,4041,west
+eDNA_taxon62,Cottidae,Chitonotus,Chitonotus pugetensis,Roughback sculpin,12s,475,west
+eDNA_taxon63,Cottidae,Enophrys,Enophrys bison,buffalo sculpin,12s,6168,west
+eDNA_taxon64,Cottidae,Hemilepidotus,Hemilepidotus hemilepidotus,red Irish lord,12s,186,west
+eDNA_taxon65,Cottidae,Leptocottus,Leptocottus armatus,Pacific staghorn sculpin,12s,183920,west
+eDNA_taxon66,Cottidae,Myoxocephalus,Myoxocephalus polyacanthocephalus,great sculpin,12s,115,west
+eDNA_taxon67,Cottidae,Scorpaenichthys,Scorpaenichthys marmoratus,cabezon,12s,960,west
+eDNA_taxon68,Embiotocidae,Brachyistius,Brachyistius frenatus,Kelp perch,12s,2639,west
+eDNA_taxon69,Embiotocidae,Cymatogaster,Cymatogaster aggregata,shiner perch,12s,867325,west
+eDNA_taxon70,Embiotocidae,Embiotoca,Embiotoca lateralis,striped surfperch,12s,7515,west
+eDNA_taxon71,Embiotocidae,Rhacochilus,Rhacochilus vacca,pile perch,12s,12024,west
+eDNA_taxon15,Gasterosteidae,Gasterosteus,Gasterosteus aculeatus,three-spined stickleback,12s,19968,west
+eDNA_taxon72,Gobiidae,Lepidogobius,Lepidogobius lepidus,bay goby,12s,6367,west
+eDNA_taxon73,Hemitripteridae,Nautichthys,Nautichthys oculofasciatus,sailfin sculpin,12s,1334,west
+eDNA_taxon74,Hexagrammidae,Hexagrammos,Hexagrammos decagrammus,kelp greenling,12s,6079,west
+eDNA_taxon75,Hexagrammidae,Ophiodon,Ophiodon elongatus,lingcod,12s,168,west
+eDNA_taxon76,Merlucciidae,Merluccius,Merluccius productus,North Pacific hake,12s,1934,west
+eDNA_taxon77,Osmeridae,Hypomesus,Hypomesus pretiosus,surf smelt,12s,9491,west
+eDNA_taxon78,Paralichthyidae,Citharichthys,Citharichthys sordidus,Pacific sanddab,12s,1770,west
+eDNA_taxon79,Paralichthyidae,Citharichthys,Citharichthys stigmaeus,speckled sanddab,12s,3359,west
+eDNA_taxon80,Pholidae,Apodichthys,Apodichthys flavidus,penpoint gunnel,12s,6715,west
+eDNA_taxon81,Pholidae,Pholis,Pholis laeta,crescent gunnel,12s,52615,west
+eDNA_taxon82,Pholidae,Pholis,Pholis ornata,saddleback gunnel,12s,76639,west
+eDNA_taxon83,Pleuronectidae,Pleuronichthys,Pleuronichthys coenosus,C-O sole,12s,3863,west
+eDNA_taxon84,Salmonidae,Oncorhynchus,Oncorhynchus gorbuscha,pink salmon,12s,1205,west
+eDNA_taxon85,Salmonidae,Oncorhynchus,Oncorhynchus keta,chum salmon,12s,3441,west
+eDNA_taxon86,Salmonidae,Oncorhynchus,Oncorhynchus kisutch,coho salmon,12s,4148,west
+eDNA_taxon87,Salmonidae,Oncorhynchus,Oncorhynchus tshawytscha,Chinook salmon,12s,12755,west
+eDNA_taxon88,Stichaeidae,Lumpenus,Lumpenus sagitta,snake prickleback,12s,36915,west
+eDNA_taxon89,Syngnathidae,Syngnathus,Syngnathus leptorhynchus,bay pipefish,12s,259572,west
+eDNA_taxon90,Ammodytidae,Ammodytes,Ammodytes personatus,Pacific sandlance,12s,8135,west
+eDNA_taxon91,Anarhichadidae,Anarrhichthys,Anarrhichthys ocellatus,wolf eel,12s,218,west
+eDNA_taxon92,Bythitidae,Brosmophycis,Brosmophycis marginata,Red brotula,12s,433,west
+eDNA_taxon30,Clupeidae,CL1_Alosa_12S,Alosa sapidissima_Alosa fallax,American shad_twaite shad,12s,153,west
+eDNA_taxon93,Cottidae,Artedius,Artedius lateralis,smoothhead sculpin,12s,6953,west
+eDNA_taxon94,Cottidae,Ascelichthys,Ascelichthys rhodorus,rosylip sculpin,12s,26937,west
+eDNA_taxon95,Cottidae,Clinocottus,Clinocottus acuticeps,sharpnose sculpin,12s,1842,west
+eDNA_taxon96,Cottidae,CO4_Oligocottus_12S,Oligocottus maculosus_Oligocottus snyderi,tidepool sculpin_fluffy sculpin,12s,35496,west
+eDNA_taxon97,Cottidae,Synchirus,Synchirus gilli,Manacled sculpin,12s,1088,west
+eDNA_taxon98,Engraulidae,Engraulis,Engraulis mordax,California anchovy,12s,1140,west
+eDNA_taxon36,Gadidae,GA1_Gadus_12S,Gadus macrocephalus_Gadus morhua_Gadus chalcogrammus,Pacific cod |Atlantic cod |Alaska pollock,12s,699,west
+eDNA_taxon99,Gobiidae,Clevelandia,Clevelandia ios,arrow goby,12s,5103,west
+eDNA_taxon100,Hexagrammidae,HE1_Hexagrammos_12S,Hexagrammos lagocephalus_Hexagrammos octagrammus_Hexagrammos stelleri,rock greenling_masked greenling_whitespotted greenling,12s,25082,west
+eDNA_taxon101,Liparidae,Polypera,Polypera greeni,Lobefin snailfish,12s,957,west
+eDNA_taxon102,Pleuronectidae,PL6_2genera_12S,Platichthys stellatus_Myzopsetta ferruginea_Platichthys flesus,starry flounder_yellowtail flounder_European flounder,12s,22230,west
+eDNA_taxon103,Pleuronectidae,PL4_2genera_12S,Psettichthys melanostictus_Isopsetta isolepis,Pacific sand sole_butter sole,12s,20669,west
+eDNA_taxon104,Sebastes,SE1_Sebastes_12S,14 Sebastes sp,,12s,1052,west
+eDNA_taxon105,Sebastes,SE2_Sebastes_12S,Sebastes caurinus_Sebastes maliger,copper rockfish_quillback rockfish,12s,267,west
+eDNA_taxon106,Sebastes,SE3_Sebastes_12S,Sebastes crameri_Sebastes variabilis,darkblotched rockfish_light dusky rockfish,12s,976,west
+eDNA_taxon107,Sebastidae,Sebastes,Sebastes auriculatus,brown rockfish,12s,185,west
+eDNA_taxon108,Stichaeidae,ST4_Anoplarchus_12S,Anoplarchus purpurescens_Anoplarchus insignis,high cockscomb_slender cockscomb,12s,43537,west
+eDNA_taxon109,Stichaeidae,ST5_Chirolophis_12S,Chirolophis nugator_Chirolophis decoratus,mosshead warbonnet_decorated warbonnet,12s,941,west
+eDNA_taxon110,Stichaeidae,Lumpenus,Lumpenus fabricii,Slender eelblenny,12s,277,west
+eDNA_taxon111,Stichaeidae,ST3_Xiphister_12S,Xiphister atropurpureus_Xiphister mucosus,black prickleback_rock prickleback,12s,6946,west
+eDNA_taxon112,Agonidae,Blepsias,Blepsias cirrhosus,silverspotted sculpin,12s,0,west
+eDNA_taxon43,Ammodytidae,AM2_Ammodytes_16S,Ammodytes hexapterus_Ammodytes personatus,Pacific sand lance_Pacific sandlance,12s,0,west
+eDNA_taxon113,Batrachoididae,Porichthys,Porichthys notatus,plainfin midshipman,12s,0,west
+eDNA_taxon114,Gadidae,GA2_Gadus_16S,Gadus morhua_Gadus ogac |Gadus macrocephalus,Atlantic cod |Greenland cod |Pacific cod,12s,0,west
+eDNA_taxon115,Gobiesocidae,Gobiesox,Gobiesox maeandricus,northern clingfish,12s,0,west
+eDNA_taxon116,Gobiidae,Rhinogobiops,Rhinogobiops nicholsii,blackeye goby,12s,0,west
+eDNA_taxon117,Hexagrammidae,Hexagrammos,Hexagrammos stelleri,whitespotted greenling,12s,0,west
+eDNA_taxon118,Liparidae,Liparis,Liparis dennyi,marbled snailfish,12s,0,west
+eDNA_taxon119,Liparidae,Liparis,Liparis florae,tidepool Snailfish,12s,0,west
+eDNA_taxon120,Pholidae,Apodichthys,Apodichthys fucorum,rockweed gunnel,12s,0,west
+eDNA_taxon55,Pleuronectidae,PL5_4genera_16S,Platichthys flesus_Platichthys stellatus_Pseudopleuronectes americanus_Parophrys vetulus_Lepidopsetta polyxystra_Lepidopsetta bilineata,European flounder_starry flounder_winter flounder_English sole_northern rock sole_rock sole,12s,0,west
+eDNA_taxon121,Pleuronectidae,PL6_2genera_16S,Psettichthys melanostictus_Parophrys vetulus,Pacific sand sole |English sole,12s,0,west
+eDNA_taxon122,Salmonidae,Oncorhynchus,Oncorhynchus nerka,sockeye salmon,12s,0,west
+eDNA_taxon123,Salmonidae,Salmo,Salmo salar,Atlantic salmon,12s,0,west
+eDNA_taxon124,Sebastidae,SE2_Sebastes_16S,Sebastes aleutianus_Sebastes borealis_Sebastes diploproa_Sebastes proriger,rougheye rockfish_shortraker rockfish_splitnose rockfish_redstripe rockfish,12s,0,west
+eDNA_taxon125,Sebastidae,SE3_Sebastes_16S,Sebastes auriculatus_Sebastes caurinus_Sebastes maliger,brown rockfish_copper rockfish_quillback rockfish,12s,0,west
+eDNA_taxon126,Sebastidae,SE5_Sebastes_16S,Sebastes ciliates_Sebastes crameri_Sebastes polyspinis_Sebastes reedi_Sebastes variabilis,dusky rockfish_darkblotched rockfish_northern rockfish_yellowmouth rockfish_light dusky rockfish,12s,0,west
+eDNA_taxon127,Sebastidae,SE8_Sebastes_16S,Sebastes flavidus_Sebastes melanops,yellow tail rockfish_black rockfish,12s,0,west
+eDNA_taxon128,Stichaeidae,Anoplarchus,Anoplarchus insignis,slender cockscomb,12s,0,west
+eDNA_taxon129,Stichaeidae,Xiphister,Xiphister atropurpureus,black prickleback,12s,0,west
+eDNA_taxon57,Agonidae,Agonopsis,Agonopsis vulsa,northern spearnose poacher,16s,271,west
+eDNA_taxon58,Aulorhynchidae,Aulorhynchus,Aulorhynchus flavidus,tube-snout,16s,3818,west
+eDNA_taxon59,Clupeidae,Clupea,Clupea pallasii,Pacific herring,16s,26567,west
+eDNA_taxon60,Cottidae,Artedius,Artedius fenestralis,padded sculpin,16s,14841,west
+eDNA_taxon61,Cottidae,Artedius,Artedius harringtoni,Scalyhead sculpin,16s,4016,west
+eDNA_taxon62,Cottidae,Chitonotus,Chitonotus pugetensis,Roughback sculpin,16s,176,west
+eDNA_taxon63,Cottidae,Enophrys,Enophrys bison,buffalo sculpin,16s,22678,west
+eDNA_taxon64,Cottidae,Hemilepidotus,Hemilepidotus hemilepidotus,red Irish lord,16s,380,west
+eDNA_taxon65,Cottidae,Leptocottus,Leptocottus armatus,Pacific staghorn sculpin,16s,336723,west
+eDNA_taxon66,Cottidae,Myoxocephalus,Myoxocephalus polyacanthocephalus,great sculpin,16s,47088,west
+eDNA_taxon67,Cottidae,Scorpaenichthys,Scorpaenichthys marmoratus,cabezon,16s,832,west
+eDNA_taxon68,Embiotocidae,Brachyistius,Brachyistius frenatus,Kelp perch,16s,20078,west
+eDNA_taxon69,Embiotocidae,Cymatogaster,Cymatogaster aggregata,shiner perch,16s,2370390,west
+eDNA_taxon70,Embiotocidae,Embiotoca,Embiotoca lateralis,striped surfperch,16s,14484,west
+eDNA_taxon71,Embiotocidae,Rhacochilus,Rhacochilus vacca,pile perch,16s,58209,west
+eDNA_taxon15,Gasterosteidae,Gasterosteus,Gasterosteus aculeatus,three-spined stickleback,16s,39860,west
+eDNA_taxon72,Gobiidae,Lepidogobius,Lepidogobius lepidus,bay goby,16s,2796,west
+eDNA_taxon73,Hemitripteridae,Nautichthys,Nautichthys oculofasciatus,sailfin sculpin,16s,2071,west
+eDNA_taxon74,Hexagrammidae,Hexagrammos,Hexagrammos decagrammus,kelp greenling,16s,6838,west
+eDNA_taxon75,Hexagrammidae,Ophiodon,Ophiodon elongatus,lingcod,16s,3778,west
+eDNA_taxon76,Merlucciidae,Merluccius,Merluccius productus,North Pacific hake,16s,5661,west
+eDNA_taxon77,Osmeridae,Hypomesus,Hypomesus pretiosus,surf smelt,16s,8421,west
+eDNA_taxon78,Paralichthyidae,Citharichthys,Citharichthys sordidus,Pacific sanddab,16s,436,west
+eDNA_taxon79,Paralichthyidae,Citharichthys,Citharichthys stigmaeus,speckled sanddab,16s,6959,west
+eDNA_taxon80,Pholidae,Apodichthys,Apodichthys flavidus,penpoint gunnel,16s,13262,west
+eDNA_taxon81,Pholidae,Pholis,Pholis laeta,crescent gunnel,16s,157555,west
+eDNA_taxon82,Pholidae,Pholis,Pholis ornata,saddleback gunnel,16s,119858,west
+eDNA_taxon83,Pleuronectidae,Pleuronichthys,Pleuronichthys coenosus,C-O sole,16s,14427,west
+eDNA_taxon84,Salmonidae,Oncorhynchus,Oncorhynchus gorbuscha,pink salmon,16s,2093,west
+eDNA_taxon85,Salmonidae,Oncorhynchus,Oncorhynchus keta,chum salmon,16s,17468,west
+eDNA_taxon86,Salmonidae,Oncorhynchus,Oncorhynchus kisutch,coho salmon,16s,2586,west
+eDNA_taxon87,Salmonidae,Oncorhynchus,Oncorhynchus tshawytscha,Chinook salmon,16s,45656,west
+eDNA_taxon88,Stichaeidae,Lumpenus,Lumpenus sagitta,snake prickleback,16s,1868,west
+eDNA_taxon89,Syngnathidae,Syngnathus,Syngnathus leptorhynchus,bay pipefish,16s,305871,west
+eDNA_taxon90,Ammodytidae,Ammodytes,Ammodytes personatus,Pacific sandlance,16s,0,west
+eDNA_taxon91,Anarhichadidae,Anarrhichthys,Anarrhichthys ocellatus,wolf eel,16s,0,west
+eDNA_taxon92,Bythitidae,Brosmophycis,Brosmophycis marginata,Red brotula,16s,0,west
+eDNA_taxon30,Clupeidae,CL1_Alosa_12S,Alosa sapidissima_Alosa fallax,American shad_twaite shad,16s,0,west
+eDNA_taxon93,Cottidae,Artedius,Artedius lateralis,smoothhead sculpin,16s,0,west
+eDNA_taxon94,Cottidae,Ascelichthys,Ascelichthys rhodorus,rosylip sculpin,16s,0,west
+eDNA_taxon95,Cottidae,Clinocottus,Clinocottus acuticeps,sharpnose sculpin,16s,0,west
+eDNA_taxon96,Cottidae,CO4_Oligocottus_12S,Oligocottus maculosus_Oligocottus snyderi,tidepool sculpin_fluffy sculpin,16s,0,west
+eDNA_taxon97,Cottidae,Synchirus,Synchirus gilli,Manacled sculpin,16s,0,west
+eDNA_taxon98,Engraulidae,Engraulis,Engraulis mordax,California anchovy,16s,0,west
+eDNA_taxon36,Gadidae,GA1_Gadus_12S,Gadus macrocephalus_Gadus morhua_Gadus chalcogrammus,Pacific cod_Atlantic cod_Alaska pollock,16s,0,west
+eDNA_taxon99,Gobiidae,Clevelandia,Clevelandia ios,arrow goby,16s,0,west
+eDNA_taxon100,Hexagrammidae,HE1_Hexagrammos_12S,Hexagrammos lagocephalus_Hexagrammos octagrammus_Hexagrammos stelleri,rock greenling_masked greenling_whitespotted greenling,16s,0,west
+eDNA_taxon101,Liparidae,Polypera,Polypera greeni,Lobefin snailfish,16s,0,west
+eDNA_taxon102,Pleuronectidae,PL6_2genera_12S,Platichthys stellatus_Myzopsetta ferruginea_Platichthys flesus,starry flounder_yellowtail flounder_European flounder,16s,0,west
+eDNA_taxon103,Pleuronectidae,PL4_2genera_12S,Psettichthys melanostictus_Isopsetta isolepis,Pacific sand sole_butter sole,16s,0,west
+eDNA_taxon104,Sebastes,SE1_Sebastes_12S,14 Sebastes sp,,16s,0,west
+eDNA_taxon105,Sebastes,SE2_Sebastes_12S,Sebastes caurinus_Sebastes maliger,copper rockfish_quillback rockfish,16s,0,west
+eDNA_taxon106,Sebastes,SE3_Sebastes_12S,Sebastes crameri_Sebastes variabilis,darkblotched rockfish_light dusky rockfish,16s,0,west
+eDNA_taxon107,Sebastidae,Sebastes,Sebastes auriculatus,brown rockfish,16s,0,west
+eDNA_taxon108,Stichaeidae,ST4_Anoplarchus_12S,Anoplarchus purpurescens_Anoplarchus insignis,high cockscomb_slender cockscomb,16s,0,west
+eDNA_taxon109,Stichaeidae,ST5_Chirolophis_12S,Chirolophis nugator_Chirolophis decoratus,mosshead warbonnet_decorated warbonnet,16s,0,west
+eDNA_taxon110,Stichaeidae,Lumpenus,Lumpenus fabricii,Slender eelblenny,16s,0,west
+eDNA_taxon111,Stichaeidae,ST3_Xiphister_12S,Xiphister atropurpureus_Xiphister mucosus,black prickleback_rock prickleback,16s,0,west
+eDNA_taxon112,Agonidae,Blepsias,Blepsias cirrhosus,silverspotted sculpin,16s,1526,west
+eDNA_taxon43,Ammodytidae,AM2_Ammodytes_16S,Ammodytes hexapterus_Ammodytes personatus,Pacific sand lance_Pacific sandlance,16s,7055,west
+eDNA_taxon113,Batrachoididae,Porichthys,Porichthys notatus,plainfin midshipman,16s,48899,west
+eDNA_taxon114,Gadidae,GA2_Gadus_16S,Gadus morhua_Gadus ogac |Gadus macrocephalus,Atlantic cod_Greenland cod_Pacific cod,16s,1746,west
+eDNA_taxon115,Gobiesocidae,Gobiesox,Gobiesox maeandricus,northern clingfish,16s,1247,west
+eDNA_taxon116,Gobiidae,Rhinogobiops,Rhinogobiops nicholsii,blackeye goby,16s,5545,west
+eDNA_taxon117,Hexagrammidae,Hexagrammos,Hexagrammos stelleri,whitespotted greenling,16s,37436,west
+eDNA_taxon118,Liparidae,Liparis,Liparis dennyi,marbled snailfish,16s,185,west
+eDNA_taxon119,Liparidae,Liparis,Liparis florae,tidepool Snailfish,16s,11617,west
+eDNA_taxon120,Pholidae,Apodichthys,Apodichthys fucorum,rockweed gunnel,16s,684,west
+eDNA_taxon55,Pleuronectidae,PL5_4genera_16S,Platichthys flesus_Platichthys stellatus_Pseudopleuronectes americanus_Parophrys vetulus_Lepidopsetta polyxystra_Lepidopsetta bilineata,European flounder_starry flounder_winter flounder_English sole_northern rock sole_rock sole,16s,40868,west
+eDNA_taxon121,Pleuronectidae,PL6_2genera_16S,Psettichthys melanostictus_Parophrys vetulus,Pacific sand sole |English sole,16s,39903,west
+eDNA_taxon122,Salmonidae,Oncorhynchus,Oncorhynchus nerka,sockeye salmon,16s,567,west
+eDNA_taxon123,Salmonidae,Salmo,Salmo salar,Atlantic salmon,16s,188,west
+eDNA_taxon124,Sebastidae,SE2_Sebastes_16S,Sebastes aleutianus_Sebastes borealis_Sebastes diploproa_Sebastes proriger,rougheye rockfish_shortraker rockfish_splitnose rockfish_redstripe rockfish,16s,279,west
+eDNA_taxon125,Sebastidae,SE3_Sebastes_16S,Sebastes auriculatus_Sebastes caurinus_Sebastes maliger,brown rockfish_copper rockfish_quillback rockfish,16s,1834,west
+eDNA_taxon126,Sebastidae,SE5_Sebastes_16S,Sebastes ciliates_Sebastes crameri_Sebastes polyspinis_Sebastes reedi_Sebastes variabilis,dusky rockfish_darkblotched rockfish_northern rockfish_yellowmouth rockfish_light dusky rockfish,16s,2704,west
+eDNA_taxon127,Sebastidae,SE8_Sebastes_16S,Sebastes flavidus_Sebastes melanops,yellow tail rockfish_black rockfish,16s,4298,west
+eDNA_taxon128,Stichaeidae,Anoplarchus,Anoplarchus insignis,slender cockscomb,16s,33332,west
+eDNA_taxon129,Stichaeidae,Xiphister,Xiphister atropurpureus,black prickleback,16s,5971,west
+west_seining_taxon01,Agonidae,Blepsias,Blepsias cirrhosus,Silverspotted Sculpin,seining,8,west
+west_seining_taxon02,Ammodytidae,Ammodytes,Ammodytes personatus,Pacific Sandlance,seining,7,west
+west_seining_taxon03,Aulorhynchidae,Aulorhynchus,Aulorhynchus flavidus,Tube-snout,seining,5,west
+west_seining_taxon04,Batrachoididae,Porichthys,Porichthys notatus,Plainfin Midshipman,seining,532,west
+west_seining_taxon05,Clupeidae,Clupea,Clupea pallasii,Pacific Herring,seining,298,west
+west_seining_taxon06,Cottidae,Artedius,Artedius fenestralis,Padded Sculpin,seining,32,west
+west_seining_taxon07,Cottidae,Artedius,Artedius lateralis,Smoothhead Sculpin,seining,61,west
+west_seining_taxon08,Cottidae,Ascelichthys,Ascelichthys rhodorus,Rosylip Sculpin,seining,157,west
+west_seining_taxon09,Cottidae,Clinocottus,Clinocottus acuticeps,Sharpnose Sculpin,seining,5,west
+west_seining_taxon10,Cottidae,Enophrys,Enophrys bison,Buffalo Sculpin,seining,13,west
+west_seining_taxon11,Cottidae,Leptocottus,Leptocottus armatus,Pacific Staghorn Sculpin,seining,69,west
+west_seining_taxon12,Cottidae,Myoxocephalus,Myoxocephalus polyacanthocephalus,Great Sculpin,seining,3,west
+west_seining_taxon13,Cottidae,Oligocottus,Oligocottus maculosus,Tidepool Sculpin,seining,533,west
+west_seining_taxon14,Cottidae,Scorpaenichthys,Scorpaenichthys marmoratus,Cabezon,seining,1,west
+west_seining_taxon15,Embiotocidae,Brachyistius,Brachyistius frenatus,Kelp perch,seining,6,west
+west_seining_taxon16,Embiotocidae,Cymatogaster,Cymatogaster aggregata,Shiner Perch,seining,709,west
+west_seining_taxon17,Embiotocidae,Embiotoca,Embiotoca lateralis,Striped Seaperch,seining,4,west
+west_seining_taxon18,Embiotocidae,Rhacochilus,Rhacochilus vacca,Pile Perch,seining,6,west
+west_seining_taxon19,Gasterosteidae,Gasterosteus,Gasterosteus aculeatus,three-spined Stickleback,seining,190,west
+west_seining_taxon20,Gobiidae,Clevelandia,Clevelandia ios,Arrow Goby,seining,8,west
+west_seining_taxon21,Gobiidae,Lepidogobius,Lepidogobius lepidus,Bay Goby,seining,7,west
+west_seining_taxon22,Gobiidae,Rhinogobiops,Rhinogobiops nicholsii,Blackeye Goby,seining,53,west
+west_seining_taxon23,Hexagrammidae,Hexagrammos,Hexagrammos decagrammus,Kelp Greenling,seining,2,west
+west_seining_taxon24,Hexagrammidae,Hexagrammos,Hexagrammos stelleri,Whitespotted Greenling,seining,12,west
+west_seining_taxon25,Liparidae,Liparis,Liparis sp.,Snailfish sp.,seining,7,west
+west_seining_taxon26,Osmeridae,Hypomesus,Hypomesus pretiosus,Surf Smelt,seining,197,west
+west_seining_taxon27,Paralichthyidae,Citharichthys,Citharichthys stigmaeus,Speckled Sanddab,seining,21,west
+west_seining_taxon28,Pholidae,Apodichthys,Apodichthys flavidus,Penpoint Gunnel,seining,29,west
+west_seining_taxon29,Pholidae,Apodichthys,Apodichthys fucorum,Rockweed Gunnel,seining,45,west
+west_seining_taxon30,Pholidae,Pholis,Pholis laeta,Crescent Gunnel,seining,501,west
+west_seining_taxon31,Pholidae,Pholis,Pholis ornata,Saddleback Gunnel,seining,276,west
+west_seining_taxon32,Pleuronectidae,Parophrys,Parophrys vetulus,English Sole,seining,2,west
+west_seining_taxon33,Pleuronectidae,Platichthys,Platichthys stellatus,Starry Flounder,seining,4,west
+west_seining_taxon34,Sebastidae,Sebastes,Sebastes sp.,Quillback Rockfish,seining,1,west
+west_seining_taxon35,Sebastidae,Sebastes,Sebastes sp.,Rockfish sp.,seining,2,west
+west_seining_taxon36,Stichaeidae,Anoplarchus,Anoplarchus purpurescens,High Cockscomb,seining,47,west
+west_seining_taxon37,Stichaeidae,Lumpenus,Lumpenus sagitta,Snake Prickleback,seining,2,west
+west_seining_taxon38,Syngnathidae,Syngnathus,Syngnathus leptorhynchus,Bay Pipefish,seining,5145,west

@@ -69,8 +69,8 @@ venn_bar <- function(bar_data,title=""){
           rbind(.,df3)%>%
           mutate(Phylum = factor(Phylum,levels=c(levels(df2$Phylum),"All")),
                  Status = gsub(" only","",Status),
-                 Status = gsub("Traditional","RV",Status),
-                 Status = factor(Status,levels=c("RV","Shared","eDNA")),
+                 Status = gsub("Traditional","Other",Status),
+                 Status = factor(Status,levels=c("Other","Shared","eDNA")),
                  group = ifelse(Phylum == "All","All","Phyla"),
                  group = factor(group,levels=c("Phyla","All")))
   
